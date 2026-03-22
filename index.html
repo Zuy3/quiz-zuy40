@@ -233,6 +233,16 @@ body{font-family:"Nunito",sans-serif;background:var(--creme);color:var(--txt);mi
 .lb-img{max-width:90vw;max-height:85vh;border-radius:12px;object-fit:contain;}
 .lb-close{position:absolute;top:16px;right:20px;font-size:32px;color:#fff;cursor:pointer;background:none;border:none;line-height:1;}
 
+/* ── TIMER ── */
+.timer-box{background:rgba(196,105,42,.15);border:2px solid rgba(232,137,74,.4);border-radius:14px;padding:14px 20px;text-align:center;margin-bottom:20px;}
+.timer-label{font-size:12px;color:var(--terra-l);font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:6px;}
+.timer-digits{font-family:"Playfair Display",serif;font-size:36px;font-weight:700;color:var(--terra);letter-spacing:4px;}
+.timer-digits.urgent{color:#E74C3C;animation:timerPulse .5s ease infinite;}
+@keyframes timerPulse{0%,100%{transform:scale(1);}50%{transform:scale(1.05);}}
+/* ── EMAIL IN RESULT ── */
+.result-email-box{background:linear-gradient(135deg,rgba(45,80,22,.95),rgba(74,124,47,.95));border-radius:20px;padding:28px 24px;margin-bottom:24px;border:1px solid rgba(122,182,72,.3);}
+.result-email-title{font-family:"Playfair Display",serif;font-size:18px;color:#fff;font-weight:600;margin-bottom:6px;}
+.result-email-sub{font-size:13px;color:rgba(255,255,255,.65);margin-bottom:18px;line-height:1.5;}
 /* ── ANIMS ── */
 @keyframes fu{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);}}
 @keyframes pulse{0%,100%{transform:scale(1);}50%{transform:scale(1.07);}}
@@ -276,18 +286,20 @@ body{font-family:"Nunito",sans-serif;background:var(--creme);color:var(--txt);mi
       <p class="hero-note">⏱ Menos de 2 minutos · Grátis · Sem compromisso</p>
 
       <!-- EMAIL CAPTURE -->
-      <div class="email-capture" id="ec-form-wrap">
-        <div class="ec-title">📩 Receba receitas exclusivas grátis</div>
-        <div class="ec-sub">Cadastre-se e ganhe 3 receitas de chá detox que desinflam em 24h — direto no seu e-mail.</div>
-        <form class="ec-form" id="ec-form" onsubmit="submitEmail(event)">
-          <div class="ec-row">
-            <input class="ec-input" type="text" id="ec-nome" placeholder="Seu primeiro nome" required autocomplete="given-name">
-            <input class="ec-input" type="email" id="ec-email" placeholder="Seu melhor e-mail" required autocomplete="email">
-          </div>
-          <button class="ec-submit" id="ec-btn" type="submit">🎁 Quero minhas receitas grátis!</button>
-        </form>
-        <div class="ec-success" id="ec-success">✅ Perfeito! Verifique seu e-mail em instantes 💚</div>
-        <p class="ec-privacy">🔒 Seus dados estão seguros. Sem spam, nunca.</p>
+      <!-- DIAGNÓSTICO GRATUITO — social proof rápido -->
+      <div style="display:flex;justify-content:center;gap:24px;flex-wrap:wrap;margin-top:8px;animation:fu .8s .55s ease both;">
+        <div style="display:flex;align-items:center;gap:8px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:100px;padding:10px 20px;">
+          <span style="font-size:18px;">🔬</span>
+          <span style="font-size:13px;color:rgba(255,255,255,.85);font-weight:600;">Diagnóstico 100% personalizado</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:8px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:100px;padding:10px 20px;">
+          <span style="font-size:18px;">🎁</span>
+          <span style="font-size:13px;color:rgba(255,255,255,.85);font-weight:600;">Receitas exclusivas no resultado</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:8px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:100px;padding:10px 20px;">
+          <span style="font-size:18px;">⚡</span>
+          <span style="font-size:13px;color:rgba(255,255,255,.85);font-weight:600;">Resultado imediato — grátis</span>
+        </div>
       </div>
     </div>
   </div>
@@ -370,13 +382,18 @@ body{font-family:"Nunito",sans-serif;background:var(--creme);color:var(--txt);mi
     </div>
     <div class="cta-box">
       <div class="cta-in">
-        <div class="cta-urg">🔥 Oferta especial — apenas hoje</div>
+        <!-- TIMER COUNTDOWN -->
+        <div class="timer-box">
+          <div class="timer-label">⏰ Esta oferta expira em</div>
+          <div class="timer-digits" id="countdown">15:00</div>
+        </div>
+        <div class="cta-urg">🔥 Oferta especial — apenas agora</div>
         <h3 class="cta-title">Pegue o Seu <em>Protocolo Completo</em><br>Agora Por Apenas:</h3>
         <p class="cta-sub">Acesso imediato ao eBook + todos os protocolos + bônus exclusivos</p>
         <div class="price-de">De R$97,00</div>
         <div class="price-por"><sup>R$</sup>27<span class="cts">,00</span></div>
         <div class="price-parc">pagamento único · acesso imediato</div>
-        <a href="https://pay.hotmart.com/T93171913Y?checkoutMode=10" class="btn-buy" onclick="goUpsell(event)">🛒 SIM! Quero Minha Barriga Chapada em 7 Dias</a>
+        <a href="https://pay.hotmart.com/T93171913Y?checkoutMode=10" class="btn-buy" target="_blank">🛒 SIM! Quero Minha Barriga Chapada em 7 Dias</a>
         <div class="cta-gar">🛡️ Garantia de 7 dias · Risco zero · Devolução total</div>
       </div>
     </div>
@@ -424,23 +441,54 @@ body{font-family:"Nunito",sans-serif;background:var(--creme);color:var(--txt);mi
 <section class="screen" id="s-down">
   <div class="dn-card">
     <div class="dn-head">
-      <div class="dn-emoji">⏳</div>
-      <h2 class="dn-title">Espera! Antes de ir embora,<br>tenho uma oferta especial só para você</h2>
+      <div class="dn-emoji">🍃</div>
+      <h2 class="dn-title">Tudo bem! Mas antes de sair —<br>tenho algo só para você</h2>
     </div>
     <div class="dn-body">
-      <p class="dn-text">Entendo que o momento pode não ser ideal. Por isso tenho uma oferta diferente — mais focada, mais acessível e com resultados que você vê ao espelho:</p>
+      <p class="dn-text">Entendo que o protocolo completo não é para agora. Por isso criei um kit express — mais pequeno, mais barato e com resultado imediato para a barriga:</p>
       <div class="dn-offer">
-        <div class="dn-offer-name">✨ Colágeno Caseiro: O Segredo para uma Pele Jovem</div>
-        <div class="dn-offer-price">R$27,90</div>
-        <div class="dn-offer-desc">40 receitas naturais para produzir colágeno em casa e firmar a pele</div>
+        <div class="dn-offer-name">🍵 Kit Receitas Express — Barriga Desinchada</div>
+        <div class="dn-offer-price">R$17</div>
+        <div class="dn-offer-desc">7 receitas de chá detox para desinchar em 24 horas</div>
       </div>
       <div style="display:grid;gap:8px;margin-bottom:18px;">
-        <div class="up-inc"><span>🌿</span><span>40 receitas caseiras para produção de colágeno natural</span></div>
-        <div class="up-inc"><span>✨</span><span>Eliminar rugas e firmeza da pele sem gastar fortuna</span></div>
-        <div class="up-inc"><span>💧</span><span>Hidratação profunda com ingredientes da cozinha</span></div>
+        <div class="up-inc"><span>🍵</span><span>7 receitas de chá detox para desinchar em 24h</span></div>
+        <div class="up-inc"><span>🚫</span><span>Lista dos 10 alimentos que mais incham a barriga</span></div>
+        <div class="up-inc"><span>⚡</span><span>Protocolo de emergência para dias de muito inchaço</span></div>
       </div>
-      <a href="https://pay.hotmart.com/T93171913Y?checkoutMode=10" class="btn-dn-yes" onclick="goThanks(event)">🛒 Sim! Quero Colágeno Caseiro por R$27,90</a>
-      <button class="btn-dn-no" onclick="goThanks(null)">Não, obrigada. Não quero nada mais.</button>
+      <a href="https://pay.hotmart.com/T93171913Y?checkoutMode=10" class="btn-dn-yes" target="_blank">🛒 Sim! Quero o Kit Express por R$17</a>
+      <button class="btn-dn-no" onclick="goEmailCapture()">Não, obrigada. Não preciso disso agora.</button>
+    </div>
+  </div>
+</section>
+
+<!-- ════════ EMAIL CAPTURE ════════ -->
+<section class="screen" id="s-email-capture">
+  <div style="background:linear-gradient(160deg,#1a3409,#2D5016);min-height:100vh;display:flex;align-items:center;justify-content:center;padding:40px 20px;">
+    <div style="max-width:480px;width:100%;text-align:center;">
+      <div style="font-size:56px;margin-bottom:20px;">🎁</div>
+      <h2 style="font-family:'Playfair Display',serif;font-size:clamp(24px,5vw,34px);color:#fff;font-weight:700;line-height:1.25;margin-bottom:12px;">
+        Antes de ir — receba<br><em style="color:#D4A853;font-style:italic;">3 receitas detox grátis</em>
+      </h2>
+      <p style="font-size:15px;color:rgba(255,255,255,.65);line-height:1.7;margin-bottom:28px;">
+        Deixa o teu nome e e-mail e enviamos agora mesmo 3 receitas de chá detox para desinchar em 24 horas — completamente grátis.
+      </p>
+      <div style="background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.15);border-radius:20px;padding:28px 24px;">
+        <form id="final-ec-form" onsubmit="submitFinalEmail(event)">
+          <div style="display:flex;flex-direction:column;gap:12px;">
+            <input class="ec-input" type="text" id="final-nome" placeholder="Seu primeiro nome" required autocomplete="given-name" style="width:100%;">
+            <input class="ec-input" type="email" id="final-email" placeholder="Seu melhor e-mail" required autocomplete="email" style="width:100%;">
+            <button class="ec-submit" id="final-ec-btn" type="submit">🎁 Quero minhas receitas grátis!</button>
+          </div>
+        </form>
+        <div id="final-ec-success" style="display:none;text-align:center;padding:16px;background:rgba(122,182,72,.2);border-radius:12px;color:#fff;font-size:15px;font-weight:600;">
+          ✅ Receitas enviadas! Verifique seu e-mail em instantes 💚
+        </div>
+        <p style="font-size:11px;color:rgba(255,255,255,.3);text-align:center;margin-top:12px;">🔒 Seus dados estão seguros. Sem spam, nunca.</p>
+      </div>
+      <button onclick="goThanks(null)" style="margin-top:16px;background:none;border:none;color:rgba(255,255,255,.35);font-size:12px;cursor:pointer;font-family:'Nunito',sans-serif;text-decoration:underline;">
+        Não, obrigada. Prefiro não receber.
+      </button>
     </div>
   </div>
 </section>
@@ -695,6 +743,7 @@ function showResult(){
   const pct=Math.round((total/max)*100);
   buildImgCarousel("track3");
   showScreen("s-result");
+  startTimer();
   let title,sub,diag,fillCls,pctLbl;
   if(pct>=70){
     title="Seu intestino está <em>pedindo socorro urgente!</em>";
@@ -721,9 +770,95 @@ function showResult(){
   setTimeout(()=>{fill.style.width=pct+"%";},300);
 }
 
+// ── COUNTDOWN TIMER ──
+let timerInterval = null;
+function startTimer(){
+  clearInterval(timerInterval);
+  let secs = 15 * 60; // 15 minutes
+  const el = document.getElementById("countdown");
+  if(!el) return;
+  timerInterval = setInterval(() => {
+    const m = Math.floor(secs / 60);
+    const s = secs % 60;
+    const str = String(m).padStart(2,"0") + ":" + String(s).padStart(2,"0");
+    if(el) el.textContent = str;
+    if(secs <= 60 && el) el.classList.add("urgent");
+    if(secs <= 0){
+      clearInterval(timerInterval);
+      if(el) el.textContent = "00:00";
+    }
+    secs--;
+  }, 1000);
+}
+
+// ── EMAIL SUBMIT IN RESULT ──
+function submitResultEmail(e){
+  e.preventDefault();
+  const nome = document.getElementById("res-nome").value.trim();
+  const email = document.getElementById("res-email").value.trim();
+  const btn = document.getElementById("res-ec-btn");
+  if(!nome || !email) return;
+  btn.textContent = "⏳ Enviando...";
+  btn.disabled = true;
+  fetch("https://api.web3forms.com/submit", {
+    method: "POST",
+    headers: {"Content-Type":"application/json","Accept":"application/json"},
+    body: JSON.stringify({
+      access_key: "f360fa80-b691-47e6-b424-c1a80edbaae8",
+      name: nome, email: email,
+      subject: "Novo Lead — Resultado Quiz Barriga Chapada",
+      from_name: "Quiz Barriga Chapada",
+      source: "quiz-resultado"
+    })
+  })
+  .then(r => r.json())
+  .then(() => {
+    document.getElementById("res-ec-form").style.display = "none";
+    document.getElementById("res-ec-success").style.display = "block";
+  })
+  .catch(() => {
+    document.getElementById("res-ec-form").style.display = "none";
+    document.getElementById("res-ec-success").style.display = "block";
+  });
+}
+
 function goUpsell(e){if(e)e.preventDefault();showScreen("s-upsell");}
 function goDown(){showScreen("s-down");}
+function goEmailCapture(){showScreen("s-email-capture");}
 function goThanks(e){if(e)e.preventDefault();showScreen("s-thanks");}
+
+// ── EMAIL FINAL (após downsell) ──
+function submitFinalEmail(e){
+  e.preventDefault();
+  const nome = document.getElementById("final-nome").value.trim();
+  const email = document.getElementById("final-email").value.trim();
+  const btn = document.getElementById("final-ec-btn");
+  if(!nome || !email) return;
+  btn.textContent = "⏳ Enviando...";
+  btn.disabled = true;
+  fetch("https://api.web3forms.com/submit", {
+    method: "POST",
+    headers: {"Content-Type":"application/json","Accept":"application/json"},
+    body: JSON.stringify({
+      access_key: "f360fa80-b691-47e6-b424-c1a80edbaae8",
+      name: nome, email: email,
+      subject: "Novo Lead — Pós Downsell Quiz Barriga Chapada",
+      from_name: "Quiz Barriga Chapada",
+      source: "quiz-pos-downsell"
+    })
+  })
+  .then(r => r.json())
+  .then(() => {
+    document.getElementById("final-ec-form").style.display = "none";
+    document.getElementById("final-ec-success").style.display = "block";
+    setTimeout(() => goThanks(null), 2500);
+  })
+  .catch(() => {
+    document.getElementById("final-ec-form").style.display = "none";
+    document.getElementById("final-ec-success").style.display = "block";
+    setTimeout(() => goThanks(null), 2500);
+  });
+}
 
 // ── INIT ──
 document.addEventListener("DOMContentLoaded",()=>{
