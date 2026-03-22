@@ -279,12 +279,12 @@ body{font-family:"Nunito",sans-serif;background:var(--creme);color:var(--txt);mi
       <div class="email-capture" id="ec-form-wrap">
         <div class="ec-title">📩 Receba receitas exclusivas grátis</div>
         <div class="ec-sub">Cadastre-se e ganhe 3 receitas de chá detox que desinflam em 24h — direto no seu e-mail.</div>
-        <form class="ec-form" onsubmit="submitEmail(event)">
+        <form class="ec-form" id="ec-form" onsubmit="submitEmail(event)">
           <div class="ec-row">
             <input class="ec-input" type="text" id="ec-nome" placeholder="Seu primeiro nome" required autocomplete="given-name">
             <input class="ec-input" type="email" id="ec-email" placeholder="Seu melhor e-mail" required autocomplete="email">
           </div>
-          <button class="ec-submit" type="submit">🎁 Quero minhas receitas grátis!</button>
+          <button class="ec-submit" id="ec-btn" type="submit">🎁 Quero minhas receitas grátis!</button>
         </form>
         <div class="ec-success" id="ec-success">✅ Perfeito! Verifique seu e-mail em instantes 💚</div>
         <p class="ec-privacy">🔒 Seus dados estão seguros. Sem spam, nunca.</p>
@@ -584,19 +584,40 @@ function showScreen(id){
 // ── EMAIL CAPTURE ──
 function submitEmail(e){
   e.preventDefault();
-  const nome=document.getElementById("ec-nome").value;
-  const email=document.getElementById("ec-email").value;
-  // Store locally
-  localStorage.setItem("lead_nome",nome);
-  localStorage.setItem("lead_email",email);
-  // Send to Formspree (replace YOUR_FORM_ID with actual Formspree ID)
-  fetch("https://formspree.io/f/xojkyokl",{
-    method:"POST",
-    headers:{"Content-Type":"application/json","Accept":"application/json"},
-    body:JSON.stringify({nome,email,source:"quiz-barriga-chapada"})
-  }).catch(()=>{});
-  document.querySelector(".ec-form").style.display="none";
-  document.getElementById("ec-success").style.display="block";
+  const nome = document.getElementById("ec-nome").value.trim();
+  const email = document.getElementById("ec-email").value.trim();
+  const btn = document.getElementById("ec-btn");
+
+  if(!nome || !email){ return; }
+
+  btn.textContent = "⏳ Enviando...";
+  btn.disabled = true;
+
+  // Web3Forms — 100% gratuito, sem limitações
+  fetch("https://api.web3forms.com/submit", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      "Accept": "application/json"
+    },
+    body: JSON.stringify({
+      access_key: "f360fa80-b691-47e6-b424-c1a80edbaae8",
+      name: nome,
+      email: email,
+      subject: "Novo Lead — Quiz Barriga Chapada",
+      from_name: "Quiz Barriga Chapada",
+      source: "quiz-barriga-chapada"
+    })
+  })
+  .then(function(res){ return res.json(); })
+  .then(function(data){
+    document.getElementById("ec-form").style.display = "none";
+    document.getElementById("ec-success").style.display = "block";
+  })
+  .catch(function(){
+    document.getElementById("ec-form").style.display = "none";
+    document.getElementById("ec-success").style.display = "block";
+  });
 }
 
 // ── QUIZ ──
@@ -708,6 +729,13 @@ function goThanks(e){if(e)e.preventDefault();showScreen("s-thanks");}
 document.addEventListener("DOMContentLoaded",()=>{
   buildImgCarousel("track1");
   buildTxtCarousel("track2");
+  // Show success message if redirected back after form submission
+  if(window.location.search.includes("lead=ok")){
+    const form = document.querySelector(".ec-form");
+    const success = document.getElementById("ec-success");
+    if(form) form.style.display = "none";
+    if(success) success.style.display = "block";
+  }
 });
 </script>
 </body>
