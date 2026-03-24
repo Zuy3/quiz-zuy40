@@ -6,12 +6,12 @@
 <meta name="description" content="Descubra por que sua barriga não desincha e receba um protocolo personalizado com chás naturais. Grátis. 47.000+ mulheres transformadas.">
 <title>Barriga Chapada em 7 Dias — Diagnóstico Gratuito</title>
 <!-- Google Analytics GA4 -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-MR1Y85KK46"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-Z2TZQJLE7L"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-  gtag('config', 'G-MR1Y85KK46');
+  gtag('config', 'G-Z2TZQJLE7L');
   // Track screen views
   function trackScreen(name){
     gtag('event','screen_view',{screen_name:name});
@@ -62,7 +62,10 @@ body{font-family:"Nunito",sans-serif;background:var(--creme);color:var(--txt);mi
 .stat-n{font-family:"Playfair Display",serif;font-size:28px;font-weight:700;color:var(--dourado);display:block;}
 .stat-l{font-size:12px;color:rgba(255,255,255,.55);text-transform:uppercase;letter-spacing:.5px;margin-top:2px;}
 .stat-sep{border-left:1px solid rgba(255,255,255,.15);padding:0 28px;}
-.btn-cta{display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,var(--terra),var(--terra-l));color:#fff;border:none;border-radius:100px;padding:18px 44px;font-size:17px;font-weight:800;font-family:"Nunito",sans-serif;cursor:pointer;box-shadow:0 8px 32px rgba(196,105,42,.4);transition:all .3s ease;text-decoration:none;animation:fu .8s .5s ease both;}
+.btn-cta{display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,var(--terra),var(--terra-l));color:#fff;border:none;border-radius:100px;padding:18px 44px;font-size:17px;font-weight:800;font-family:"Nunito",sans-serif;cursor:pointer;box-shadow:0 8px 32px rgba(196,105,42,.4);transition:all .3s ease;text-decoration:none;animation:fu .8s .5s ease both,btnPulse 2.5s 1.5s ease infinite;position:relative;overflow:hidden;}
+.btn-cta::after{content:"";position:absolute;top:0;left:-100%;width:60%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.25),transparent);animation:shimmer 2.5s 2s ease infinite;}
+@keyframes shimmer{0%{left:-100%;}100%{left:200%;}}
+@keyframes btnPulse{0%,100%{box-shadow:0 8px 32px rgba(196,105,42,.4);}50%{box-shadow:0 8px 48px rgba(196,105,42,.7),0 0 0 8px rgba(196,105,42,.1);}}
 .btn-cta:hover{transform:translateY(-3px);box-shadow:0 14px 44px rgba(196,105,42,.5);}
 .hero-note{margin-top:14px;font-size:13px;color:rgba(255,255,255,.4);animation:fu .8s .6s ease both;margin-bottom:40px;}
 
@@ -305,50 +308,40 @@ body{font-family:"Nunito",sans-serif;background:var(--creme);color:var(--txt);mi
     <div class="blob b2"></div>
     <div class="hero-inner">
       <div class="badge">🌿 Método Natural Comprovado</div>
-      <h1 class="hero-h1">Descubra Por Que a Sua<br><em>Barriga Não Desincha</em><br>— Mesmo Fazendo Tudo Certo</h1>
-      <p class="hero-p">Responda 7 perguntas rápidas e receba um diagnóstico personalizado com o protocolo exato para achatar a barriga naturalmente em 7 dias.</p>
-      <div class="stats">
-        <div class="stat"><span class="stat-n">+47K</span><span class="stat-l">Mulheres Transformadas</span></div>
-        <div class="stat stat-sep"><span class="stat-n">7 dias</span><span class="stat-l">Para Ver Resultado</span></div>
-        <div class="stat"><span class="stat-n">100%</span><span class="stat-l">Natural &amp; Seguro</span></div>
+      <h1 class="hero-h1">Este Teste Rápido Revela<br><em>Por Que Sua Barriga Não Desincha</em><br><span style="font-size:clamp(16px,2.8vw,22px);font-weight:400;font-style:normal;color:rgba(255,255,255,.8);">Mais de 47.000 mulheres já descobriram a causa oculta</span></h1>
+      <p class="hero-p">Descubra a causa exacta do seu inchaço e receba um protocolo personalizado com chás naturais — completamente grátis.</p>
+      <div class="stats" style="display:flex;justify-content:center;align-items:center;gap:0;flex-wrap:nowrap;width:100%;max-width:480px;margin:0 auto 40px;">
+        <div class="stat" style="flex:1;text-align:center;"><span class="stat-n">+47K</span><span class="stat-l">Transformadas</span></div>
+        <div style="width:1px;height:40px;background:rgba(255,255,255,.2);flex-shrink:0;"></div>
+        <div class="stat" style="flex:1;text-align:center;"><span class="stat-n">7 dias</span><span class="stat-l">Para Resultado</span></div>
+        <div style="width:1px;height:40px;background:rgba(255,255,255,.2);flex-shrink:0;"></div>
+        <div class="stat" style="flex:1;text-align:center;"><span class="stat-n">100%</span><span class="stat-l">Natural & Seguro</span></div>
       </div>
       <button class="btn-cta" onclick="startQuiz()">✨ Fazer meu diagnóstico gratuito →</button>
       <p class="hero-note">⏱ Menos de 2 minutos · Grátis · Sem compromisso</p>
 
       <!-- EMAIL CAPTURE -->
-      <!-- DIAGNÓSTICO GRATUITO — social proof rápido -->
-      <div style="display:flex;justify-content:center;gap:24px;flex-wrap:wrap;margin-top:8px;animation:fu .8s .55s ease both;">
-        <div style="display:flex;align-items:center;gap:8px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:100px;padding:10px 20px;">
-          <span style="font-size:18px;">🔬</span>
-          <span style="font-size:13px;color:rgba(255,255,255,.85);font-weight:600;">Diagnóstico 100% personalizado</span>
+      <!-- TRUST BADGES — compacto horizontal -->
+      <div style="display:flex;justify-content:center;align-items:center;gap:20px;flex-wrap:wrap;margin-top:8px;animation:fu .8s .55s ease both;">
+        <div style="display:flex;align-items:center;gap:6px;">
+          <span style="font-size:14px;">🔬</span>
+          <span style="font-size:12px;color:rgba(255,255,255,.7);font-weight:600;">Diagnóstico personalizado</span>
         </div>
-        <div style="display:flex;align-items:center;gap:8px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:100px;padding:10px 20px;">
-          <span style="font-size:18px;">🎁</span>
-          <span style="font-size:13px;color:rgba(255,255,255,.85);font-weight:600;">Receitas exclusivas no resultado</span>
+        <span style="color:rgba(255,255,255,.2);font-size:16px;">·</span>
+        <div style="display:flex;align-items:center;gap:6px;">
+          <span style="font-size:14px;">🎁</span>
+          <span style="font-size:12px;color:rgba(255,255,255,.7);font-weight:600;">Receitas grátis</span>
         </div>
-        <div style="display:flex;align-items:center;gap:8px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:100px;padding:10px 20px;">
-          <span style="font-size:18px;">⚡</span>
-          <span style="font-size:13px;color:rgba(255,255,255,.85);font-weight:600;">Resultado imediato — grátis</span>
+        <span style="color:rgba(255,255,255,.2);font-size:16px;">·</span>
+        <div style="display:flex;align-items:center;gap:6px;">
+          <span style="font-size:14px;">⚡</span>
+          <span style="font-size:12px;color:rgba(255,255,255,.7);font-weight:600;">Resultado imediato</span>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- PHOTO CAROUSEL -->
-  <div class="sp-section">
-    <p class="sp-label">✦ Resultados reais — antes e depois ✦</p>
-    <div class="track-wrap">
-      <div class="track" id="track1"></div>
-    </div>
-  </div>
 
-  <!-- TEXT TESTIMONIALS -->
-  <div class="sp-section" style="background:var(--creme);">
-    <p class="sp-label">✦ O que estão dizendo ✦</p>
-    <div class="track-wrap">
-      <div class="track" id="track2"></div>
-    </div>
-  </div>
 </section>
 
 <!-- ════════ QUIZ ════════ -->
@@ -366,14 +359,14 @@ body{font-family:"Nunito",sans-serif;background:var(--creme);color:var(--txt);mi
 <section class="screen" id="s-loading">
   <div class="ld-content">
     <span class="ld-icon">🔬</span>
-    <h2 class="ld-title">Analisando seu perfil...</h2>
-    <p class="ld-sub">Processando suas respostas para criar um diagnóstico 100% personalizado para você.</p>
+    <h2 class="ld-title" id="ld-title">Analisando seu perfil...</h2>
+    <p class="ld-sub">Cruzando suas respostas com os padrões mais comuns de inchaço abdominal feminino</p>
     <div class="ld-bar-wrap"><div class="ld-bar" id="ld-bar"></div></div>
     <div class="ld-steps">
-      <div class="ld-step" id="ls1"><div class="ld-step-ico">🧪</div><span>Identificando padrão de inchaço...</span></div>
-      <div class="ld-step" id="ls2"><div class="ld-step-ico">📊</div><span>Calculando nível de toxinas...</span></div>
-      <div class="ld-step" id="ls3"><div class="ld-step-ico">🌿</div><span>Selecionando protocolo ideal...</span></div>
-      <div class="ld-step" id="ls4"><div class="ld-step-ico">✅</div><span>Preparando seu diagnóstico...</span></div>
+      <div class="ld-step" id="ls1"><div class="ld-step-ico">💧</div><span>Analisando retenção de líquidos...</span></div>
+      <div class="ld-step" id="ls2"><div class="ld-step-ico">🔥</div><span>Verificando nível de inflamação...</span></div>
+      <div class="ld-step" id="ls3"><div class="ld-step-ico">🦠</div><span>Avaliando saúde intestinal...</span></div>
+      <div class="ld-step" id="ls4"><div class="ld-step-ico">🎯</div><span>Calculando protocolo personalizado...</span></div>
     </div>
   </div>
 </section>
@@ -430,7 +423,7 @@ body{font-family:"Nunito",sans-serif;background:var(--creme);color:var(--txt);mi
         <div class="price-de">Normalmente R$97,00</div>
         <div class="price-por"><sup>R$</sup>27<span class="cts">,00</span></div>
         <div class="price-parc">pagamento único · acesso imediato</div>
-        <a href="https://pay.hotmart.com/T93171913Y?checkoutMode=10" class="btn-buy" target="_blank" onclick="trackBuyClick('resultado')">🛒 SIM! Quero Minha Barriga Chapada em 7 Dias</a>
+        <a href="https://pay.hotmart.com/T93171913Y?checkoutMode=10" class="btn-buy" target="_blank" onclick="trackBuyClick('resultado')" id="main-cta-btn">⚡ Eliminar o Inchaço Hoje — Acesso Imediato</a>
         <div class="cta-gar">🛡️ Garantia de 7 dias · Risco zero · Devolução total</div>
       </div>
     </div>
@@ -471,9 +464,13 @@ body{font-family:"Nunito",sans-serif;background:var(--creme);color:var(--txt);mi
           <div class="up-inc"><span>🩺</span><span>Previna 90% das doenças com ingredientes simples</span></div>
           <div class="up-inc"><span>🎁</span><span>Bónus: Receitas para acabar com dores e desconfortos</span></div>
         </div>
-        <div class="up-prices">
-          <span class="up-p-de">R$97</span>
+        <div class="up-prices" style="flex-direction:column;gap:4px;">
+          <div style="display:flex;align-items:center;justify-content:center;gap:12px;">
+            <span class="up-p-de">R$97</span>
+            <span style="background:#E74C3C;color:#fff;font-size:11px;font-weight:800;padding:3px 10px;border-radius:100px;font-family:'Nunito',sans-serif;">POUPE R$49,10</span>
+          </div>
           <span class="up-p-por">R$47,90</span>
+          <div style="font-size:12px;color:var(--txt2);margin-top:2px;">✅ Acesso imediato · Sem mensalidade</div>
         </div>
         <a href="https://pay.hotmart.com/T93171913Y?checkoutMode=10" class="btn-up-yes" onclick="goThanks(event)">✅ SIM! Quero Saúde Natural Descomplicada por R$47,90</a>
         <button class="btn-up-no" onclick="goDown()">Não, obrigada. Prefiro apenas o básico por agora.</button>
@@ -576,49 +573,58 @@ const txtTestimonials=[
 ];
 
 const questions=[
-  {ic:"🤔",txt:"Qual é a sua maior queixa com a barriga hoje?",opts:[
-    {ic:"🎈",t:"Inchaço constante",s:"A barriga fica dura e inchada o dia todo",v:3},
-    {ic:"🏋️",t:"Gordura localizada",s:"Tenho gordura abdominal difícil de perder",v:2},
-    {ic:"😣",t:"Gases e desconforto",s:"Gases, cólicas e sensação de peso",v:3},
-    {ic:"🔄",t:"Tudo acima",s:"Sofro com vários desses problemas ao mesmo tempo",v:4},
+  // Q1 — Emocional (o que mais incomoda)
+  {ic:"💔",txt:"O que mais te incomoda no seu corpo hoje?",opts:[
+    {ic:"🎈",t:"Barriga inchada",s:"Me sinto inchada o dia todo, independente do que como",v:3},
+    {ic:"😴",t:"Cansaço constante",s:"Me sinto esgotada e sem energia para nada",v:3},
+    {ic:"🐢",t:"Digestão lenta",s:"Meu intestino é preguiçoso e me causa muito desconforto",v:3},
+    {ic:"👗",t:"Roupa apertada",s:"Evito roupas que gostava por causa do volume abdominal",v:4},
   ]},
-  {ic:"📅",txt:"Há quanto tempo você sofre com esse problema?",opts:[
-    {ic:"📆",t:"Menos de 3 meses",s:"Começou recentemente",v:1},
-    {ic:"🗓️",t:"De 3 a 6 meses",s:"Já tem algum tempo",v:2},
-    {ic:"📊",t:"De 6 meses a 2 anos",s:"Situação prolongada",v:3},
-    {ic:"⏰",t:"Mais de 2 anos",s:"Há muito tempo sofro com isso",v:4},
+  // Q2 — Dor social (evita roupas)
+  {ic:"😳",txt:"Você evita usar roupas justas por causa da aparência da barriga?",opts:[
+    {ic:"😞",t:"Sim, sempre",s:"Escolho roupas escondendo a barriga há muito tempo",v:4},
+    {ic:"😕",t:"Às vezes",s:"Em certas ocasiões me sinto constrangida",v:3},
+    {ic:"🤔",t:"Raramente",s:"Só em dias muito ruins",v:2},
+    {ic:"🙂",t:"Não, mas quero melhorar",s:"Não evito mas quero me sentir mais confiante",v:1},
   ]},
-  {ic:"🔍",txt:"Você já tentou resolver isso antes?",opts:[
-    {ic:"❌",t:"Nunca tentei nada",s:"Esta é minha primeira tentativa",v:1},
-    {ic:"💊",t:"Remédios e suplementos",s:"Já gastei com produtos que não funcionaram",v:3},
-    {ic:"🥗",t:"Dietas e restrições",s:"Passei fome mas voltei ao mesmo",v:3},
-    {ic:"😞",t:"Vários métodos sem sucesso",s:"Nada funcionou de forma duradoura",v:4},
+  // Q3 — Frequência do inchaço
+  {ic:"📅",txt:"Com que frequência a sua barriga fica inchada ao longo do dia?",opts:[
+    {ic:"🌅",t:"Acordo já inchada",s:"A barriga começa grande logo de manhã",v:4},
+    {ic:"🌓",t:"Piora à tarde e à noite",s:"De manhã está bem mas vai crescendo",v:3},
+    {ic:"🍽️",t:"Após qualquer refeição",s:"Qualquer coisa que como me incha",v:4},
+    {ic:"🔀",t:"Varia sem explicação",s:"Às vezes está normal, às vezes enorme sem razão",v:3},
   ]},
-  {ic:"🏃",txt:"Como é o seu nível de atividade física?",opts:[
-    {ic:"🛋️",t:"Sedentária",s:"Quase não me mexo no dia a dia",v:3},
-    {ic:"🚶",t:"Levemente ativa",s:"Caminhadas leves ocasionais",v:2},
-    {ic:"🏊",t:"Moderadamente ativa",s:"Exercito 2 a 3 vezes por semana",v:1},
-    {ic:"💪",t:"Muito ativa",s:"Academia ou esporte frequente",v:1},
+  // Q4 — Tentativas anteriores
+  {ic:"🔍",txt:"Você já tentou resolver o inchaço antes — e se sentiu decepcionada?",opts:[
+    {ic:"💸",t:"Gastei muito e não funcionou",s:"Investi em produtos, dietas e remédios sem resultado",v:4},
+    {ic:"🥗",t:"Fiz dieta e passei fome",s:"Me privei de tudo mas a barriga não saiu",v:3},
+    {ic:"😐",t:"Tentei algumas coisas",s:"Com resultado parcial ou temporário",v:2},
+    {ic:"🆕",t:"É minha primeira tentativa",s:"Ainda não tentei nada específico",v:1},
   ]},
-  {ic:"🍽️",txt:"Como você avalia a sua alimentação atualmente?",opts:[
-    {ic:"🍔",t:"Muita coisa industrializada",s:"Como bastante fast food e processados",v:4},
-    {ic:"🍕",t:"Mista, pouco saudável",s:"Mistura de saudável e não saudável",v:3},
-    {ic:"🥙",t:"Razoável",s:"Tento comer bem mas tenho deslizes",v:2},
-    {ic:"🥑",t:"Relativamente saudável",s:"Como bem mas o problema persiste",v:1},
+  // Q5 — Hidratação (precisão percebida)
+  {ic:"💧",txt:"Quantos copos de água você bebe por dia?",opts:[
+    {ic:"🏜️",t:"Menos de 4 copos",s:"Bebo muito pouco e sei que preciso melhorar",v:4},
+    {ic:"🤏",t:"Entre 4 e 6 copos",s:"Bebo razoavelmente mas poderia ser mais",v:3},
+    {ic:"✅",t:"Entre 6 e 8 copos",s:"Tenho um consumo adequado de água",v:2},
+    {ic:"💦",t:"Mais de 8 copos",s:"Sou bem hidratada mas ainda assim incho",v:1},
   ]},
-  {ic:"💧",txt:"Com que frequência você sente a barriga inchada?",opts:[
-    {ic:"☀️",t:"Só após comer algo específico",s:"Alguns alimentos me incomodam",v:2},
-    {ic:"🌓",t:"Todo dia à tarde e à noite",s:"Piora ao longo do dia",v:3},
-    {ic:"🌙",t:"Acordo já inchada",s:"A barriga já inicia o dia grande",v:4},
-    {ic:"😰",t:"O tempo todo, sem parar",s:"Nunca fica normal",v:4},
+  // Q6 — Movimento
+  {ic:"🏃",txt:"Quantas vezes por semana você se movimenta?",opts:[
+    {ic:"🛋️",t:"Quase nunca",s:"Tenho um estilo de vida muito sedentário",v:4},
+    {ic:"🚶",t:"1 a 2 vezes",s:"Faço caminhadas ou atividades leves ocasionalmente",v:3},
+    {ic:"🏊",t:"3 a 4 vezes",s:"Tenho uma rotina moderada de exercícios",v:2},
+    {ic:"💪",t:"5 vezes ou mais",s:"Sou ativa mas ainda assim tenho problemas",v:1},
   ]},
-  {ic:"🎯",txt:"Qual é o seu principal objetivo com este protocolo?",opts:[
-    {ic:"👗",t:"Entrar numa roupa especial",s:"Tenho um evento e quero me sentir bem",v:2},
-    {ic:"😍",t:"Autoestima e confiança",s:"Quero me sentir bem comigo mesma",v:2},
-    {ic:"💚",t:"Saúde e bem-estar",s:"Quero me sentir mais leve e saudável",v:1},
-    {ic:"🏆",t:"Transformação completa",s:"Quero mudar minha relação com o corpo",v:3},
+  // Q7 — Comprometimento (micro-commit)
+  {ic:"🌟",txt:"Se você recebesse HOJE um protocolo com chás baratos do mercado — estaria disposta a seguir por 7 dias?",opts:[
+    {ic:"🔥",t:"SIM! Começo hoje mesmo",s:"Estou pronta para transformar minha barriga agora",v:1},
+    {ic:"✅",t:"Sim, se for simples",s:"Desde que não precise de academia nem dieta radical",v:1},
+    {ic:"🤞",t:"Tentaria com certeza",s:"Vale a pena tentar mais uma vez com o método certo",v:2},
+    {ic:"💭",t:"Quero entender primeiro",s:"Preciso ver os resultados antes de me comprometer",v:2},
   ]},
 ];
+// Store user answers for personalization
+let userProfile = {mainSymptom:'', avoidClothes: false, commitment:'', hydration:'', profile:''};
 
 let cQ=0,answers=[],selOpt=null;
 
@@ -755,6 +761,13 @@ function selOption(i,v){
   document.getElementById("o"+i).classList.add("sel");
   selOpt={i,v};
   document.getElementById("bn").disabled=false;
+  if(cQ===0){
+    const opts=["barriga inchada","cansaço constante","digestão lenta","roupas apertadas"];
+    userProfile.mainSymptom=opts[i]||"inchaço";
+  }
+  if(cQ===1) userProfile.avoidClothes=(i<=1);
+  if(cQ===4) userProfile.hydration=i>=2?"boa":"baixa";
+  if(cQ===6) userProfile.commitment=i<=1?"alta":"moderada";
 }
 
 function nextQ(){
@@ -791,28 +804,100 @@ function showResult(){
   buildImgCarousel("track3");
   showScreen("s-result");
   startTimer();
+  // Personalizar CTA baseado no perfil
+  setTimeout(()=>{
+    const ctaBtn = document.getElementById("main-cta-btn");
+    if(ctaBtn){
+      if(userProfile.avoidClothes){
+        ctaBtn.innerHTML="👗 Quero Usar Minhas Roupas Favoritas Again — Acesso Imediato";
+      } else if(userProfile.mainSymptom==="cansaço constante"){
+        ctaBtn.innerHTML="⚡ Quero Mais Energia e Barriga Chapada — Acesso Imediato";
+      } else {
+        ctaBtn.innerHTML="⚡ Eliminar o Inchaço Hoje — Acesso Imediato";
+      }
+    }
+  },500);
   trackScreen("resultado");
   trackQuizComplete(pct);
-  let title,sub,diag,fillCls,pctLbl;
-  if(pct>=70){
-    title="Seu intestino está <em>pedindo socorro urgente!</em>";
-    sub="Detectamos inflamação intestinal elevada — mas o protocolo correto reverte isso em 7 dias.";
-    diag="Suas respostas indicam inflamação intestinal crónica com acúmulo severo de toxinas. O intestino sobrecarregado está causando o inchaço persistente, os gases e a gordura abdominal teimosa. O protocolo foi desenhado exatamente para este padrão.";
-    fillCls="fill-h";pctLbl=`Elevado (${pct}%)`;
-  }else if(pct>=45){
-    title="Sua barriga pode <em>melhorar muito mais!</em>";
-    sub="Identificamos um desequilíbrio intestinal moderado que está sabotando seus resultados. A solução é mais simples do que você imagina.";
-    diag="Suas respostas mostram inflamação intestinal moderada, causada por hábitos que sobrecarregam o intestino. Com o protocolo correto você vai sentir a diferença em 2 a 3 dias.";
-    fillCls="fill-m";pctLbl=`Moderado (${pct}%)`;
-  }else{
-    title="Você está <em>quase lá!</em>";
-    sub="Seu organismo tem uma boa base. Pequenos ajustes vão acelerar muito seus resultados.";
-    diag="Suas respostas indicam nível leve de inflamação intestinal. Com as receitas certas no momento certo do dia, você vai potencializar o que já faz bem e finalmente ver a barriga chapada que merece.";
-    fillCls="fill-l";pctLbl=`Leve (${pct}%)`;
+
+  // ── PERFIS SEGMENTADOS ──
+  // Detectar perfil baseado nas respostas
+  const a0=answers[0]||0; // sintoma principal
+  const a2=answers[2]||0; // frequência inchaço
+  const a4=answers[4]||0; // hidratação
+
+  let perfil, title, sub, diagTitle, diagExplain, diagConsequence, diagSolution, fillCls, pctLbl, profileTag;
+
+  if(a4>=3 && pct>=60){
+    // Perfil 1 — Retenção de líquidos
+    perfil=1;
+    profileTag="💧 Retenção de Líquidos";
+    title="Seu resultado: <em>Barriga inchada por retenção de líquidos</em>";
+    sub="Seu corpo está acumulando líquidos e toxinas, fazendo a barriga parecer maior mesmo sem ganho de peso real.";
+    diagTitle="O que está acontecendo no seu corpo:";
+    diagExplain="Seu organismo está retendo líquidos em excesso — provavelmente por desidratação crónica, consumo de sódio elevado ou desequilíbrio hormonal. Isso faz sua barriga parecer grande mesmo quando você come pouco.";
+    diagConsequence="⚠️ Se nada mudar, a retenção tende a piorar com o tempo, afectando também os tornozelos e o rosto.";
+    diagSolution="✅ Mas a boa notícia: existe uma combinação específica de chás drenantes que elimina esse excesso de líquido em 24 a 48 horas.";
+    fillCls="fill-h"; pctLbl=`Elevado (${pct}%)`;
+  } else if(pct>=60){
+    // Perfil 2 — Barriga inflamada
+    perfil=2;
+    profileTag="🔥 Intestino Inflamado";
+    title="Seu resultado: <em>Barriga inchada por inflamação intestinal</em>";
+    sub="Seu intestino está inflamado e sobrecarregado, causando inchaço persistente que não sai nem com dieta.";
+    diagTitle="O que está acontecendo no seu corpo:";
+    diagExplain="Suas respostas indicam inflamação intestinal activa. O intestino inflamado produz gases em excesso, retém toxinas e faz a barriga inchar mesmo quando você come pouco ou come bem.";
+    diagConsequence="⚠️ Com o tempo, a inflamação crónica pode intensificar o problema e afectar a sua imunidade e disposição.";
+    diagSolution="✅ Mas a boa notícia: chás anti-inflamatórios específicos conseguem reverter esse quadro em 3 a 7 dias.";
+    fillCls="fill-h"; pctLbl=`Elevado (${pct}%)`;
+  } else {
+    // Perfil 3 — Intestino lento
+    perfil=3;
+    profileTag="🐢 Intestino Lento";
+    title="Seu resultado: <em>Barriga inchada por intestino lento</em>";
+    sub="Sua digestão está mais lenta do que deveria, acumulando gases e causando aquela barriga que não sai.";
+    diagTitle="O que está acontecendo no seu corpo:";
+    diagExplain="Seu intestino está funcionando abaixo do ritmo ideal — o trânsito intestinal lento acumula gases, fermenta alimentos e provoca o inchaço que você sente principalmente ao fim do dia.";
+    diagConsequence="⚠️ Sem correcção, o intestino lento tende a piorar com a idade e o estresse.";
+    diagSolution="✅ Mas a boa notícia: receitas simples de chás activadores conseguem reequilibrar o trânsito intestinal em poucos dias.";
+    fillCls="fill-m"; pctLbl=pct>=45?`Moderado (${pct}%)`:`Leve (${pct}%)`;
   }
-  document.getElementById("res-title").innerHTML=title;
-  document.getElementById("res-sub").textContent=sub;
-  document.getElementById("diag-txt").textContent=diag;
+
+  // Guardar perfil
+  userProfile.profile = perfil;
+
+  // Injectar no HTML
+  document.getElementById("res-title").innerHTML = title;
+  document.getElementById("res-sub").innerHTML = sub;
+
+  // Resultado estruturado: Diagnóstico→Explicação→Consequência→Solução
+  document.getElementById("diag-txt").innerHTML =
+    `<span style="display:block;font-weight:700;color:var(--verde);margin-bottom:8px;">${diagTitle}</span>` +
+    `${diagExplain}<br><br>` +
+    `<span style="color:#C0392B;">${diagConsequence}</span><br><br>` +
+    `<span style="color:var(--verde-m);font-weight:600;">${diagSolution}</span>`;
+
+  // Badge de perfil
+  const diagEl = document.getElementById("diag-txt").parentElement;
+  const existingBadge = diagEl.querySelector('.profile-badge');
+  if(!existingBadge){
+    const badge = document.createElement('div');
+    badge.className='profile-badge';
+    badge.style.cssText='display:inline-block;background:linear-gradient(135deg,var(--verde),var(--verde-m));color:#fff;font-size:13px;font-weight:700;padding:6px 18px;border-radius:100px;margin-bottom:14px;';
+    badge.textContent = profileTag;
+    diagEl.insertBefore(badge, diagEl.firstChild);
+  }
+
+  // Urgência real
+  const urgEl = document.getElementById("res-sub");
+  if(urgEl && !urgEl.nextElementSibling?.classList?.contains('urgencia-real')){
+    const urg = document.createElement('p');
+    urg.className='urgencia-real';
+    urg.style.cssText='font-size:14px;color:var(--dourado);font-weight:700;margin-top:10px;';
+    urg.innerHTML='⏰ Hoje você ainda pode reverter isso — o protocolo certo muda tudo em 7 dias.';
+    urgEl.insertAdjacentElement('afterend', urg);
+  }
+
   document.getElementById("sc-pct").textContent=pctLbl;
   const fill=document.getElementById("sc-fill");
   fill.className="score-fill "+fillCls;
@@ -911,8 +996,7 @@ function submitFinalEmail(e){
 
 // ── INIT ──
 document.addEventListener("DOMContentLoaded",()=>{
-  buildImgCarousel("track1");
-  buildTxtCarousel("track2");
+  // carousels hero removidos — só aparece antes do checkout
   // Scarcity counters — social proof
   function updateScarcity(){
     const viewers = document.getElementById("viewers-count");
