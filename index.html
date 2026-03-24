@@ -5,6 +5,27 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <meta name="description" content="Descubra por que sua barriga não desincha e receba um protocolo personalizado com chás naturais. Grátis. 47.000+ mulheres transformadas.">
 <title>Barriga Chapada em 7 Dias — Diagnóstico Gratuito</title>
+<!-- Google Analytics GA4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-MR1Y85KK46"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-MR1Y85KK46');
+  // Track screen views
+  function trackScreen(name){
+    gtag('event','screen_view',{screen_name:name});
+    gtag('event','page_view',{page_title:name,page_location:window.location.href+'#'+name});
+  }
+  // Track quiz completion
+  function trackQuizComplete(score){
+    gtag('event','quiz_complete',{score_pct:score});
+  }
+  // Track purchase click
+  function trackBuyClick(location){
+    gtag('event','begin_checkout',{currency:'BRL',value:27,items:[{item_name:'Barriga Chapada 7 Dias',price:27}],click_location:location});
+  }
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,400;1,600&family=Nunito:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -233,6 +254,15 @@ body{font-family:"Nunito",sans-serif;background:var(--creme);color:var(--txt);mi
 .lb-img{max-width:90vw;max-height:85vh;border-radius:12px;object-fit:contain;}
 .lb-close{position:absolute;top:16px;right:20px;font-size:32px;color:#fff;cursor:pointer;background:none;border:none;line-height:1;}
 
+/* ── SCARCITY BAR ── */
+.scarcity-bar{background:linear-gradient(135deg,#C0392B,#E74C3C);padding:12px 20px;text-align:center;width:100%;position:sticky;top:0;z-index:20;}
+.scarcity-bar-text{font-size:13px;font-weight:700;color:#fff;letter-spacing:.3px;}
+.scarcity-bar-text span{background:rgba(255,255,255,.2);padding:2px 8px;border-radius:4px;margin:0 4px;}
+/* ── GUARANTEE BADGE ── */
+.guarantee-box{display:flex;align-items:center;gap:16px;background:var(--branco);border-radius:16px;padding:18px 20px;box-shadow:var(--sh);margin-bottom:20px;border:2px solid rgba(122,182,72,.2);}
+.guarantee-icon{font-size:36px;flex-shrink:0;}
+.guarantee-text strong{display:block;font-size:14px;font-weight:700;color:var(--txt);margin-bottom:2px;}
+.guarantee-text span{font-size:12px;color:var(--txt2);line-height:1.5;}
 /* ── TIMER ── */
 .timer-box{background:rgba(196,105,42,.15);border:2px solid rgba(232,137,74,.4);border-radius:14px;padding:14px 20px;text-align:center;margin-bottom:20px;}
 .timer-label{font-size:12px;color:var(--terra-l);font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:6px;}
@@ -357,6 +387,12 @@ body{font-family:"Nunito",sans-serif;background:var(--creme);color:var(--txt);mi
       <p class="res-sub" id="res-sub">Com base nas suas respostas, identificamos o padrão exato que impede sua barriga de desinflar.</p>
     </div>
   </div>
+  <!-- SCARCITY BAR -->
+  <div class="scarcity-bar">
+    <div class="scarcity-bar-text">
+      🔥 <span id="viewers-count">23</span> mulheres estão a ver esta oferta agora · Restam <span id="spots-count">7</span> vagas com este preço
+    </div>
+  </div>
   <div class="res-body">
     <div class="score-card">
       <p class="score-lbl">Nível de inflamação intestinal</p>
@@ -388,13 +424,22 @@ body{font-family:"Nunito",sans-serif;background:var(--creme);color:var(--txt);mi
           <div class="timer-digits" id="countdown">15:00</div>
         </div>
         <div class="cta-urg">🔥 Oferta especial — apenas agora</div>
-        <h3 class="cta-title">Pegue o Seu <em>Protocolo Completo</em><br>Agora Por Apenas:</h3>
-        <p class="cta-sub">Acesso imediato ao eBook + todos os protocolos + bônus exclusivos</p>
-        <div class="price-de">De R$97,00</div>
+        <h3 class="cta-title">O Protocolo que <em>47.000 Mulheres</em><br>Usaram Para Achatar a Barriga:</h3>
+        <p class="cta-sub">✅ Acesso imediato · 30 receitas detox · Protocolo 7 dias · Bônus exclusivos</p>
+        <div style="font-size:13px;color:rgba(255,255,255,.5);margin-bottom:2px;">⚡ Oferta termina quando o timer chegar a zero</div>
+        <div class="price-de">Normalmente R$97,00</div>
         <div class="price-por"><sup>R$</sup>27<span class="cts">,00</span></div>
         <div class="price-parc">pagamento único · acesso imediato</div>
-        <a href="https://pay.hotmart.com/T93171913Y?checkoutMode=10" class="btn-buy" target="_blank">🛒 SIM! Quero Minha Barriga Chapada em 7 Dias</a>
+        <a href="https://pay.hotmart.com/T93171913Y?checkoutMode=10" class="btn-buy" target="_blank" onclick="trackBuyClick('resultado')">🛒 SIM! Quero Minha Barriga Chapada em 7 Dias</a>
         <div class="cta-gar">🛡️ Garantia de 7 dias · Risco zero · Devolução total</div>
+      </div>
+    </div>
+    <!-- GUARANTEE BOX -->
+    <div class="guarantee-box">
+      <div class="guarantee-icon">🛡️</div>
+      <div class="guarantee-text">
+        <strong>Garantia Total de 7 Dias — Risco Zero</strong>
+        <span>Se não ver resultado em 7 dias, devolvo 100% do teu dinheiro. Sem perguntas, sem burocracia. A Hotmart processa imediatamente.</span>
       </div>
     </div>
     <p style="text-align:center;font-size:12px;color:var(--txt2);padding:0 16px;">🔒 Compra 100% segura via Hotmart · Acesso imediato após pagamento</p>
@@ -672,6 +717,8 @@ function submitEmail(e){
 function startQuiz(){
   cQ=0;answers=[];selOpt=null;
   showScreen("s-quiz");
+  trackScreen("quiz_start");
+  gtag('event','quiz_start');
   renderQ();
 }
 
@@ -744,6 +791,8 @@ function showResult(){
   buildImgCarousel("track3");
   showScreen("s-result");
   startTimer();
+  trackScreen("resultado");
+  trackQuizComplete(pct);
   let title,sub,diag,fillCls,pctLbl;
   if(pct>=70){
     title="Seu intestino está <em>pedindo socorro urgente!</em>";
@@ -864,6 +913,26 @@ function submitFinalEmail(e){
 document.addEventListener("DOMContentLoaded",()=>{
   buildImgCarousel("track1");
   buildTxtCarousel("track2");
+  // Scarcity counters — social proof
+  function updateScarcity(){
+    const viewers = document.getElementById("viewers-count");
+    const spots = document.getElementById("spots-count");
+    if(viewers){
+      let v = parseInt(viewers.textContent);
+      v += Math.random() > 0.5 ? 1 : -1;
+      v = Math.max(15, Math.min(35, v));
+      viewers.textContent = v;
+    }
+    if(spots){
+      let s = parseInt(spots.textContent);
+      if(Math.random() > 0.85 && s > 3){
+        s--;
+        spots.textContent = s;
+        spots.style.background = "rgba(255,100,100,.4)";
+      }
+    }
+  }
+  setInterval(updateScarcity, 8000);
   // Show success message if redirected back after form submission
   if(window.location.search.includes("lead=ok")){
     const form = document.querySelector(".ec-form");
