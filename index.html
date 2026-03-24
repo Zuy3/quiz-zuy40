@@ -292,6 +292,28 @@ body{font-family:"Nunito",sans-serif;background:var(--creme);color:var(--txt);mi
   .q-body{padding:30px 16px 50px;}
 }
 </style>
+<!-- Meta Pixel -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1242713591247490');
+fbq('track', 'PageView');
+
+// Track quiz events
+function pixelQuizStart(){ fbq('track', 'ViewContent', {content_name:'Quiz Start'}); }
+function pixelQuizResult(profile){ fbq('track', 'ViewContent', {content_name:'Quiz Result', content_category: profile}); }
+function pixelLeadCapture(){ fbq('track', 'Lead'); }
+function pixelInitCheckout(){ fbq('track', 'InitiateCheckout', {value: 27.00, currency: 'BRL'}); }
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1242713591247490&ev=PageView&noscript=1"/></noscript>
+<!-- End Meta Pixel -->
 </head>
 <body>
 
@@ -423,7 +445,7 @@ body{font-family:"Nunito",sans-serif;background:var(--creme);color:var(--txt);mi
         <div class="price-de">Normalmente R$97,00</div>
         <div class="price-por"><sup>R$</sup>27<span class="cts">,00</span></div>
         <div class="price-parc">pagamento único · acesso imediato</div>
-        <a href="https://pay.hotmart.com/T93171913Y?checkoutMode=10" class="btn-buy" target="_blank" onclick="trackBuyClick('resultado')" id="main-cta-btn">⚡ Eliminar o Inchaço Hoje — Acesso Imediato</a>
+        <a href="https://pay.hotmart.com/T93171913Y?checkoutMode=10" class="btn-buy" target="_blank" onclick="trackBuyClick('resultado');pixelInitCheckout();" id="main-cta-btn">⚡ Eliminar o Inchaço Hoje — Acesso Imediato</a>
         <div class="cta-gar">🛡️ Garantia de 7 dias · Risco zero · Devolução total</div>
       </div>
     </div>
@@ -472,7 +494,7 @@ body{font-family:"Nunito",sans-serif;background:var(--creme);color:var(--txt);mi
           <span class="up-p-por">R$47,90</span>
           <div style="font-size:12px;color:var(--txt2);margin-top:2px;">✅ Acesso imediato · Sem mensalidade</div>
         </div>
-        <a href="https://pay.hotmart.com/T93171913Y?checkoutMode=10" class="btn-up-yes" onclick="goThanks(event)">✅ SIM! Quero Saúde Natural Descomplicada por R$47,90</a>
+        <a href="https://pay.hotmart.com/T93171913Y?checkoutMode=10" class="btn-up-yes" onclick="goThanks(event);fbq('track','InitiateCheckout',{value:47.90,currency:'BRL',content_name:'Upsell'});">✅ SIM! Quero Saúde Natural Descomplicada por R$47,90</a>
         <button class="btn-up-no" onclick="goDown()">Não, obrigada. Prefiro apenas o básico por agora.</button>
       </div>
     </div>
@@ -725,6 +747,7 @@ function startQuiz(){
   showScreen("s-quiz");
   trackScreen("quiz_start");
   gtag('event','quiz_start');
+  pixelQuizStart();
   renderQ();
 }
 
@@ -819,6 +842,7 @@ function showResult(){
   },500);
   trackScreen("resultado");
   trackQuizComplete(pct);
+  pixelQuizResult(profileTag||"resultado");
 
   // ── PERFIS SEGMENTADOS ──
   // Detectar perfil baseado nas respostas
@@ -985,11 +1009,13 @@ function submitFinalEmail(e){
   .then(() => {
     document.getElementById("final-ec-form").style.display = "none";
     document.getElementById("final-ec-success").style.display = "block";
+    pixelLeadCapture();
     setTimeout(() => goThanks(null), 2500);
   })
   .catch(() => {
     document.getElementById("final-ec-form").style.display = "none";
     document.getElementById("final-ec-success").style.display = "block";
+    pixelLeadCapture();
     setTimeout(() => goThanks(null), 2500);
   });
 }
