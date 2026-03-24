@@ -276,6 +276,19 @@ body{font-family:"Nunito",sans-serif;background:var(--creme);color:var(--txt);mi
 .result-email-box{background:linear-gradient(135deg,rgba(45,80,22,.95),rgba(74,124,47,.95));border-radius:20px;padding:28px 24px;margin-bottom:24px;border:1px solid rgba(122,182,72,.3);}
 .result-email-title{font-family:"Playfair Display",serif;font-size:18px;color:#fff;font-weight:600;margin-bottom:6px;}
 .result-email-sub{font-size:13px;color:rgba(255,255,255,.65);margin-bottom:18px;line-height:1.5;}
+/* ── SLIDERS RESULTADO ── */
+.slider-section{background:var(--branco);border-radius:18px;padding:22px 24px;margin-bottom:20px;box-shadow:var(--sh);}
+.slider-label{font-size:13px;font-weight:700;color:var(--txt);margin-bottom:10px;}
+.slider-wrap{position:relative;height:14px;background:var(--creme2);border-radius:100px;margin-bottom:6px;overflow:hidden;}
+.slider-fill{height:100%;border-radius:100px;transition:width 1.8s cubic-bezier(.4,0,.2,1);}
+.slider-fill-bad{background:linear-gradient(90deg,#E74C3C,#C0392B);}
+.slider-fill-good{background:linear-gradient(90deg,var(--verde-l),var(--verde-m));}
+.slider-dot{position:absolute;top:50%;width:22px;height:22px;border-radius:50%;background:#fff;border:3px solid;transform:translate(-50%,-50%);transition:left 1.8s cubic-bezier(.4,0,.2,1);box-shadow:0 2px 8px rgba(0,0,0,.15);}
+.slider-dot-bad{border-color:#E74C3C;}
+.slider-dot-good{border-color:var(--verde-m);}
+.slider-captions{display:flex;justify-content:space-between;font-size:11px;color:var(--txt2);}
+.perfil-checklist{background:#FFF5F5;border-radius:14px;padding:16px 18px;margin-top:16px;border-left:4px solid #E74C3C;}
+.perfil-checklist-item{display:flex;align-items:center;gap:10px;font-size:13px;color:var(--txt);padding:5px 0;}
 /* ── ANIMS ── */
 @keyframes fu{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);}}
 @keyframes pulse{0%,100%{transform:scale(1);}50%{transform:scale(1.07);}}
@@ -418,6 +431,32 @@ src="https://www.facebook.com/tr?id=1242713591247490&ev=PageView&noscript=1"/></
         <div class="diag-text" id="diag-txt">Sua barriga incha porque o intestino está sobrecarregado com toxinas acumuladas e gases. O protocolo de 7 dias com chás específicos pode reverter isso rapidamente.</div>
       </div>
     </div>
+    <!-- SLIDERS VISUAIS -->
+    <div class="slider-section" id="sliders-section">
+      <div class="slider-label">Seu nível de equilíbrio intestinal hoje:</div>
+      <div class="slider-wrap">
+        <div class="slider-fill slider-fill-bad" id="sl-bad" style="width:0%"></div>
+        <div class="slider-dot slider-dot-bad" id="sl-dot-bad" style="left:0%"></div>
+      </div>
+      <div class="slider-captions"><span style="color:#E74C3C;">Desequilibrado</span><span>Equilibrado</span></div>
+      <div style="font-size:12px;color:var(--txt2);font-style:italic;margin-top:4px;" id="sl-bad-label">Intestino sobrecarregado afetando corpo e bem-estar</div>
+
+      <div class="slider-label" style="margin-top:18px;">Onde mulheres com seu perfil chegam em 7 dias:</div>
+      <div class="slider-wrap">
+        <div class="slider-fill slider-fill-good" id="sl-good" style="width:0%"></div>
+        <div class="slider-dot slider-dot-good" id="sl-dot-good" style="left:0%"></div>
+      </div>
+      <div class="slider-captions"><span>Seu ponto de partida</span><span style="color:var(--verde-m);">Equilibrado</span></div>
+      <div style="font-size:12px;color:var(--verde-m);font-style:italic;margin-top:4px;">Barriga desinchada, energia de volta e leveza no corpo</div>
+
+      <div class="perfil-checklist" id="perfil-checklist">
+        <div style="font-size:13px;font-weight:700;color:#C0392B;margin-bottom:8px;">Identificamos no seu perfil:</div>
+        <div class="perfil-checklist-item"><span>❌</span><span id="pc1">Roupas que você ama mas não consegue usar</span></div>
+        <div class="perfil-checklist-item"><span>❌</span><span id="pc2">Inchaço persistente que não sai</span></div>
+        <div class="perfil-checklist-item"><span>❌</span><span id="pc3">Cansaço e falta de energia constantes</span></div>
+      </div>
+    </div>
+
     <h3 class="sec-title" style="margin-bottom:14px;">O que o <em style="font-style:italic;color:var(--verde)">Barriga Chapada em 7 Dias</em> vai fazer por você:</h3>
     <div class="ben-list">
       <div class="ben-item"><div class="ben-ico">🫁</div><div class="ben-txt"><strong>Eliminar o inchaço em 48h</strong><span>Receitas de chás detox que desinflam o intestino rapidamente, sem efeitos colaterais</span></div></div>
@@ -441,8 +480,27 @@ src="https://www.facebook.com/tr?id=1242713591247490&ev=PageView&noscript=1"/></
         <div class="cta-urg">🔥 Oferta especial — apenas agora</div>
         <h3 class="cta-title">O Protocolo que <em>47.000 Mulheres</em><br>Usaram Para Achatar a Barriga:</h3>
         <p class="cta-sub">✅ Acesso imediato · 30 receitas detox · Protocolo 7 dias · Bônus exclusivos</p>
-        <div style="font-size:13px;color:rgba(255,255,255,.5);margin-bottom:2px;">⚡ Oferta termina quando o timer chegar a zero</div>
-        <div class="price-de">Normalmente R$97,00</div>
+        <!-- ANCORAGEM DE PREÇO BRUTAL -->
+        <div style="background:rgba(255,255,255,.08);border-radius:12px;padding:14px 16px;margin-bottom:16px;text-align:left;">
+          <div style="display:flex;justify-content:space-between;font-size:13px;color:rgba(255,255,255,.6);padding:4px 0;border-bottom:1px solid rgba(255,255,255,.1);">
+            <span>📘 eBook Barriga Chapada 7 Dias</span><span>R$47</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;font-size:13px;color:rgba(255,255,255,.6);padding:4px 0;border-bottom:1px solid rgba(255,255,255,.1);">
+            <span>🎁 Bônus: 10 Receitas Detox Rápidas</span><span>R$27</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;font-size:13px;color:rgba(255,255,255,.6);padding:4px 0;border-bottom:1px solid rgba(255,255,255,.1);">
+            <span>🎁 Bônus: Guia de Alimentos Anti-Inchaço</span><span>R$23</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;font-size:13px;color:rgba(255,255,255,.5);padding:6px 0;text-decoration:line-through;">
+            <span>Total:</span><span>R$97,00</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;font-size:15px;font-weight:800;color:var(--dourado);padding:4px 0;">
+            <span>🔥 Hoje apenas:</span><span>R$27,00</span>
+          </div>
+        </div>
+        <div style="background:rgba(122,182,72,.2);border-radius:8px;padding:8px 14px;margin-bottom:16px;text-align:center;">
+          <span style="font-size:14px;font-weight:800;color:#7AB648;">💰 Você economiza R$70,00 agora</span>
+        </div>
         <div class="price-por"><sup>R$</sup>27<span class="cts">,00</span></div>
         <div class="price-parc">pagamento único · acesso imediato</div>
         <a href="https://pay.hotmart.com/T93171913Y?checkoutMode=10" class="btn-buy" target="_blank" onclick="trackBuyClick('resultado');pixelInitCheckout();" id="main-cta-btn">⚡ Eliminar o Inchaço Hoje — Acesso Imediato</a>
@@ -495,7 +553,7 @@ src="https://www.facebook.com/tr?id=1242713591247490&ev=PageView&noscript=1"/></
           <div style="font-size:12px;color:var(--txt2);margin-top:2px;">✅ Acesso imediato · Sem mensalidade</div>
         </div>
         <a href="https://pay.hotmart.com/T93171913Y?checkoutMode=10" class="btn-up-yes" onclick="goThanks(event);fbq('track','InitiateCheckout',{value:47.90,currency:'BRL',content_name:'Upsell'});">✅ SIM! Quero Saúde Natural Descomplicada por R$47,90</a>
-        <button class="btn-up-no" onclick="goDown()">Não, obrigada. Prefiro apenas o básico por agora.</button>
+        <button class="btn-up-no" onclick="goDown()" style="color:#999;font-size:12px;">Não, obrigada — prefiro pagar mais depois sem este desconto.</button>
       </div>
     </div>
   </div>
@@ -512,7 +570,8 @@ src="https://www.facebook.com/tr?id=1242713591247490&ev=PageView&noscript=1"/></
       <p class="dn-text">Entendo que o protocolo completo não é para agora. Por isso criei um kit express — mais pequeno, mais barato e com resultado imediato para a barriga:</p>
       <div class="dn-offer">
         <div class="dn-offer-name">🍵 Kit Receitas Express — Barriga Desinchada</div>
-        <div class="dn-offer-price">R$17</div>
+        <div style="font-size:13px;color:var(--txt2);text-decoration:line-through;margin-bottom:2px;">De R$29,90</div>
+        <div class="dn-offer-price">R$19,90</div>
         <div class="dn-offer-desc">7 receitas de chá detox para desinchar em 24 horas</div>
       </div>
       <div style="display:grid;gap:8px;margin-bottom:18px;">
@@ -520,8 +579,8 @@ src="https://www.facebook.com/tr?id=1242713591247490&ev=PageView&noscript=1"/></
         <div class="up-inc"><span>🚫</span><span>Lista dos 10 alimentos que mais incham a barriga</span></div>
         <div class="up-inc"><span>⚡</span><span>Protocolo de emergência para dias de muito inchaço</span></div>
       </div>
-      <a href="https://pay.hotmart.com/T93171913Y?checkoutMode=10" class="btn-dn-yes" target="_blank">🛒 Sim! Quero o Kit Express por R$17</a>
-      <button class="btn-dn-no" onclick="goEmailCapture()">Não, obrigada. Não preciso disso agora.</button>
+      <a href="https://pay.hotmart.com/T93171913Y?checkoutMode=10" class="btn-dn-yes" target="_blank">🛒 Quero aproveitar por R$19,90 →</a>
+      <button class="btn-dn-no" onclick="goEmailCapture()" style="color:#999;font-size:12px;">Não quero — prefiro continuar com o inchaço por enquanto.</button>
     </div>
   </div>
 </section>
@@ -595,58 +654,100 @@ const txtTestimonials=[
 ];
 
 const questions=[
-  // Q1 — Emocional (o que mais incomoda)
-  {ic:"💔",txt:"O que mais te incomoda no seu corpo hoje?",opts:[
-    {ic:"🎈",t:"Barriga inchada",s:"Me sinto inchada o dia todo, independente do que como",v:3},
-    {ic:"😴",t:"Cansaço constante",s:"Me sinto esgotada e sem energia para nada",v:3},
-    {ic:"🐢",t:"Digestão lenta",s:"Meu intestino é preguiçoso e me causa muito desconforto",v:3},
-    {ic:"👗",t:"Roupa apertada",s:"Evito roupas que gostava por causa do volume abdominal",v:4},
-  ]},
-  // Q2 — Dor social (evita roupas)
-  {ic:"😳",txt:"Você evita usar roupas justas por causa da aparência da barriga?",opts:[
-    {ic:"😞",t:"Sim, sempre",s:"Escolho roupas escondendo a barriga há muito tempo",v:4},
-    {ic:"😕",t:"Às vezes",s:"Em certas ocasiões me sinto constrangida",v:3},
-    {ic:"🤔",t:"Raramente",s:"Só em dias muito ruins",v:2},
-    {ic:"🙂",t:"Não, mas quero melhorar",s:"Não evito mas quero me sentir mais confiante",v:1},
-  ]},
-  // Q3 — Frequência do inchaço
-  {ic:"📅",txt:"Com que frequência a sua barriga fica inchada ao longo do dia?",opts:[
-    {ic:"🌅",t:"Acordo já inchada",s:"A barriga começa grande logo de manhã",v:4},
-    {ic:"🌓",t:"Piora à tarde e à noite",s:"De manhã está bem mas vai crescendo",v:3},
-    {ic:"🍽️",t:"Após qualquer refeição",s:"Qualquer coisa que como me incha",v:4},
-    {ic:"🔀",t:"Varia sem explicação",s:"Às vezes está normal, às vezes enorme sem razão",v:3},
-  ]},
-  // Q4 — Tentativas anteriores
-  {ic:"🔍",txt:"Você já tentou resolver o inchaço antes — e se sentiu decepcionada?",opts:[
-    {ic:"💸",t:"Gastei muito e não funcionou",s:"Investi em produtos, dietas e remédios sem resultado",v:4},
-    {ic:"🥗",t:"Fiz dieta e passei fome",s:"Me privei de tudo mas a barriga não saiu",v:3},
-    {ic:"😐",t:"Tentei algumas coisas",s:"Com resultado parcial ou temporário",v:2},
-    {ic:"🆕",t:"É minha primeira tentativa",s:"Ainda não tentei nada específico",v:1},
-  ]},
-  // Q5 — Hidratação (precisão percebida)
-  {ic:"💧",txt:"Quantos copos de água você bebe por dia?",opts:[
-    {ic:"🏜️",t:"Menos de 4 copos",s:"Bebo muito pouco e sei que preciso melhorar",v:4},
-    {ic:"🤏",t:"Entre 4 e 6 copos",s:"Bebo razoavelmente mas poderia ser mais",v:3},
-    {ic:"✅",t:"Entre 6 e 8 copos",s:"Tenho um consumo adequado de água",v:2},
-    {ic:"💦",t:"Mais de 8 copos",s:"Sou bem hidratada mas ainda assim incho",v:1},
-  ]},
-  // Q6 — Movimento
-  {ic:"🏃",txt:"Quantas vezes por semana você se movimenta?",opts:[
-    {ic:"🛋️",t:"Quase nunca",s:"Tenho um estilo de vida muito sedentário",v:4},
-    {ic:"🚶",t:"1 a 2 vezes",s:"Faço caminhadas ou atividades leves ocasionalmente",v:3},
-    {ic:"🏊",t:"3 a 4 vezes",s:"Tenho uma rotina moderada de exercícios",v:2},
-    {ic:"💪",t:"5 vezes ou mais",s:"Sou ativa mas ainda assim tenho problemas",v:1},
-  ]},
+  // Q1 — IDADE (segmentação imediata)
+  {
+    ic:"🌿",
+    intro:"Antes de tudo, me conta uma coisa...",
+    txt:"Qual é a sua faixa etária?",
+    sub:"Seu corpo em cada fase tem necessidades diferentes — e o protocolo certo muda tudo. Este diagnóstico foi criado especialmente para mulheres que sentem que algo mudou e querem entender o porquê.",
+    opts:[
+      {ic:"🌱",t:"Menos de 30 anos",s:"Quero cuidar da saúde preventivamente",v:1},
+      {ic:"🔥",t:"30 a 40 anos",s:"Sinto que meu metabolismo começou a mudar",v:2},
+      {ic:"⚡",t:"41 a 50 anos",s:"Meu corpo mudou muito e não sei o que fazer",v:3},
+      {ic:"🌙",t:"Mais de 50 anos",s:"Quero me sentir bem independente da idade",v:3},
+    ]
+  },
+  // Q2 — Emocional (o que mais incomoda)
+  {
+    ic:"💔",
+    intro:"Entendido. Agora me diz...",
+    txt:"Qual parte do corpo mais te incomoda quando você se olha no espelho?",
+    sub:"Sabe aquela peça no guarda-roupa que você adora mas evita usar? A calça que não fecha, o vestido que ficou pra trás... Isso vai mudar. Mulheres com o mesmo perfil voltaram a usar tudo isso.",
+    opts:[
+      {ic:"🎈",t:"Barriga e cintura que não saem",s:"O inchaço e a gordura abdominal me incomodam muito",v:3},
+      {ic:"💪",t:"Braços e pernas flácidas",s:"Perdi o tônus e não me sinto confortável",v:2},
+      {ic:"😩",t:"Corpo inteiro — sinto que mudou tudo",s:"Me olho no espelho e não me reconheço mais",v:4},
+      {ic:"⚡",t:"Falta de energia — me sinto esgotada",s:"O cansaço constante afecta tudo na minha vida",v:3},
+    ]
+  },
+  // Q3 — Dor social
+  {
+    ic:"👗",
+    intro:"Isso afecta mais do que o corpo, né?",
+    txt:"Das situações abaixo, qual te acontece com mais frequência?",
+    sub:"Isso vai além do espelho. Quando o corpo muda, a autoestima muda junto. E você começa a evitar situações que antes adorava. Você não está sozinha — e isso tem solução.",
+    opts:[
+      {ic:"📸",t:"Evito fotos e me escondo nas roupas largas",s:"Deixei de me fotografar há muito tempo",v:4},
+      {ic:"👗",t:"Tenho roupas que não uso porque não fecham mais",s:"Guardo roupas que amava esperando o dia de usar de novo",v:4},
+      {ic:"😴",t:"Acordo cansada mesmo dormindo bastante",s:"A fadiga é constante sem explicação",v:3},
+      {ic:"💔",t:"Me sinto menos atraente e isso afecta meu relacionamento",s:"A minha autoestima afecta as minhas relações",v:4},
+    ]
+  },
+  // Q4 — Frequência do inchaço
+  {
+    ic:"📅",
+    intro:"Sei que você já tentou mudar isso antes...",
+    txt:"Com que frequência a sua barriga fica inchada ao longo do dia?",
+    sub:"Não é falta de força de vontade. Se o resultado não aparece, é sinal de que o método estava errado — não você.",
+    opts:[
+      {ic:"🌅",t:"Acordo já inchada",s:"A barriga começa grande logo de manhã",v:4},
+      {ic:"🌓",t:"Piora à tarde e à noite",s:"De manhã está bem mas vai crescendo ao longo do dia",v:3},
+      {ic:"🍽️",t:"Incha após qualquer refeição",s:"Qualquer coisa que como me deixa com barriga grande",v:4},
+      {ic:"🔀",t:"Varia sem explicação",s:"Às vezes está normal, às vezes enorme sem razão",v:3},
+    ]
+  },
+  // Q5 — Hormônios/metabolismo
+  {
+    ic:"🧠",
+    intro:"Vou te contar algo importante...",
+    txt:"Você já considerou que pode ser o seu metabolismo ou hormônios te sabotando?",
+    sub:"Depois dos 40, o estrogênio cai, o cortisol sobe e o metabolismo trava. Isso explica por que tudo ficou mais difícil — mesmo fazendo o que sempre funcionou antes.",
+    opts:[
+      {ic:"💡",t:"Sim — sinto que meu corpo mudou muito",s:"Percebo claramente que algo hormonal está errado",v:3},
+      {ic:"🏥",t:"Sim — já fiz exame e tenho alteração hormonal",s:"Tenho diagnóstico mas não sei o protocolo certo",v:3},
+      {ic:"🤔",t:"Talvez — nunca tinha pensado assim",s:"Essa perspectiva faz sentido para mim",v:2},
+      {ic:"😵",t:"Não sei — só sei que nada funciona como antes",s:"Estou perdida e frustrada com a falta de resultados",v:4},
+    ]
+  },
+  // Q6 — Tentativas anteriores
+  {
+    ic:"🔍",
+    intro:"O que mais acontece quando você tenta emagrecer?",
+    txt:"Qual destas situações mais se parece com a sua história?",
+    sub:"Não é falta de dedicação — é o método errado para o seu tipo de corpo.",
+    opts:[
+      {ic:"🎢",t:"O peso vai e volta — efeito sanfona constante",s:"Emagreço mas recupero rapidamente",v:4},
+      {ic:"⛔",t:"Emagreço um pouco e trava — não sai mais nada",s:"Chego num ponto e o corpo não responde mais",v:3},
+      {ic:"🤷",t:"Faço tudo certo e o resultado não aparece",s:"Sigo à risca e não vejo diferença",v:4},
+      {ic:"⏰",t:"Não consigo manter por falta de tempo",s:"A rotina me impede de ser constante",v:2},
+    ]
+  },
   // Q7 — Comprometimento (micro-commit)
-  {ic:"🌟",txt:"Se você recebesse HOJE um protocolo com chás baratos do mercado — estaria disposta a seguir por 7 dias?",opts:[
-    {ic:"🔥",t:"SIM! Começo hoje mesmo",s:"Estou pronta para transformar minha barriga agora",v:1},
-    {ic:"✅",t:"Sim, se for simples",s:"Desde que não precise de academia nem dieta radical",v:1},
-    {ic:"🤞",t:"Tentaria com certeza",s:"Vale a pena tentar mais uma vez com o método certo",v:2},
-    {ic:"💭",t:"Quero entender primeiro",s:"Preciso ver os resultados antes de me comprometer",v:2},
-  ]},
+  {
+    ic:"🌟",
+    intro:"Quase lá! Última pergunta...",
+    txt:"Se você pudesse mudar UMA coisa no seu corpo agora, qual seria?",
+    sub:"Última pergunta — e a mais importante. O que você quer de volta não é só o peso. É a sensação de se olhar no espelho e se reconhecer. Isso está mais perto do que você imagina.",
+    opts:[
+      {ic:"🔥",t:"Desinchar a barriga de vez",s:"Quero eliminar esse inchaço que não sai nunca",v:1},
+      {ic:"⚡",t:"Recuperar minha energia e disposição",s:"Quero me sentir viva e disposta novamente",v:1},
+      {ic:"👗",t:"Voltar a usar as roupas que amo",s:"Tenho peças guardadas esperando por mim",v:1},
+      {ic:"💚",t:"Me sentir bem comigo mesma novamente",s:"Quero recuperar a autoestima e a confiança",v:1},
+    ]
+  },
 ];
 // Store user answers for personalization
-let userProfile = {mainSymptom:'', avoidClothes: false, commitment:'', hydration:'', profile:''};
+let userProfile = {age:'', mainSymptom:'', avoidClothes: false, commitment:'', hydration:'', profile:''};
 
 let cQ=0,answers=[],selOpt=null;
 
@@ -756,10 +857,14 @@ function renderQ(){
   const pct=((cQ+1)/questions.length)*100;
   document.getElementById("q-lbl").textContent=`${cQ+1} de ${questions.length}`;
   document.getElementById("q-fill").style.width=pct+"%";
+  const introHtml = q.intro ? `<p style="font-size:14px;font-weight:700;color:var(--verde-m);margin-bottom:6px;text-align:center;">${q.intro}</p>` : '';
+  const subHtml = q.sub ? `<p style="font-size:13px;color:var(--txt2);line-height:1.6;text-align:center;margin:-10px 0 18px;font-style:italic;">${q.sub}</p>` : '';
   document.getElementById("q-wrap").innerHTML=`
     <div class="q-container">
+      ${introHtml}
       <span class="q-icon">${q.ic}</span>
       <h2 class="q-text">${q.txt}</h2>
+      ${subHtml}
       <div class="opts">
         ${q.opts.map((o,i)=>`
           <button class="opt" onclick="selOption(${i},${o.v})" id="o${i}">
@@ -772,7 +877,7 @@ function renderQ(){
       <div class="q-nav">
         ${cQ>0?`<button class="btn-next btn-back" onclick="prevQ()">← Voltar</button>`:""}
         <button class="btn-next" id="bn" onclick="nextQ()" disabled>
-          ${cQ<questions.length-1?"Próxima →":"Ver meu resultado ✨"}
+          ${cQ<questions.length-1?"Continuar →":"Ver meu diagnóstico ✨"}
         </button>
       </div>
     </div>`;
@@ -784,12 +889,9 @@ function selOption(i,v){
   document.getElementById("o"+i).classList.add("sel");
   selOpt={i,v};
   document.getElementById("bn").disabled=false;
-  if(cQ===0){
-    const opts=["barriga inchada","cansaço constante","digestão lenta","roupas apertadas"];
-    userProfile.mainSymptom=opts[i]||"inchaço";
-  }
-  if(cQ===1) userProfile.avoidClothes=(i<=1);
-  if(cQ===4) userProfile.hydration=i>=2?"boa":"baixa";
+  if(cQ===0){ const ages=["menos de 30","30 a 40","41 a 50","mais de 50"]; userProfile.age=ages[i]||""; }
+  if(cQ===1){ const syms=["barriga e cintura","braços e pernas","corpo inteiro","falta de energia"]; userProfile.mainSymptom=syms[i]||"inchaço"; }
+  if(cQ===2) userProfile.avoidClothes=(i<=1);
   if(cQ===6) userProfile.commitment=i<=1?"alta":"moderada";
 }
 
@@ -827,6 +929,30 @@ function showResult(){
   buildImgCarousel("track3");
   showScreen("s-result");
   startTimer();
+  // Animar sliders baseado no score
+  setTimeout(()=>{
+    const badPct = Math.min(pct, 85);
+    const goodPct = 88;
+    const slBad = document.getElementById("sl-bad");
+    const slDotBad = document.getElementById("sl-dot-bad");
+    const slGood = document.getElementById("sl-good");
+    const slDotGood = document.getElementById("sl-dot-good");
+    if(slBad){ slBad.style.width=badPct+"%"; slDotBad.style.left=badPct+"%"; }
+    if(slGood){ slGood.style.width=goodPct+"%"; slDotGood.style.left=goodPct+"%"; }
+    // Personalizar checklist
+    if(userProfile.avoidClothes){
+      const pc1 = document.getElementById("pc1");
+      if(pc1) pc1.textContent = "Roupas que você ama mas evita usar por causa da barriga";
+    }
+    if(userProfile.mainSymptom==="falta de energia"){
+      const pc3 = document.getElementById("pc3");
+      if(pc3) pc3.textContent = "Fadiga e esgotamento constante sem explicação";
+    }
+    if(userProfile.age==="41 a 50" || userProfile.age==="mais de 50"){
+      const pc2 = document.getElementById("pc2");
+      if(pc2) pc2.textContent = "Metabolismo lento e hormônios desequilibrados";
+    }
+  }, 400);
   // Personalizar CTA baseado no perfil
   setTimeout(()=>{
     const ctaBtn = document.getElementById("main-cta-btn");
@@ -890,9 +1016,14 @@ function showResult(){
   // Guardar perfil
   userProfile.profile = perfil;
 
+  // Personalizar com idade
+  const agePhrase = userProfile.age && userProfile.age !== "menos de 30"
+    ? `Para o metabolismo de uma mulher na faixa dos ${userProfile.age} anos, `
+    : '';
+
   // Injectar no HTML
   document.getElementById("res-title").innerHTML = title;
-  document.getElementById("res-sub").innerHTML = sub;
+  document.getElementById("res-sub").innerHTML = agePhrase + sub;
 
   // Resultado estruturado: Diagnóstico→Explicação→Consequência→Solução
   document.getElementById("diag-txt").innerHTML =
