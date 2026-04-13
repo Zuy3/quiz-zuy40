@@ -503,7 +503,7 @@ src="https://www.facebook.com/tr?id=1242713591247490&ev=PageView&noscript=1"/></
         </div>
         <div class="price-por"><sup>R$</sup>27<span class="cts">,00</span></div>
         <div class="price-parc">pagamento único · acesso imediato</div>
-        <a href="https://pay.hotmart.com/T93171913Y?checkoutMode=10" class="btn-buy" target="_blank" onclick="trackBuyClick('resultado');pixelInitCheckout();" id="main-cta-btn">⚡ Eliminar o Inchaço Hoje — Acesso Imediato</a>
+        <a href="https://pay.hotmart.com/T93171913Y?checkoutMode=10" class="btn-buy" onclick="trackBuyClick('resultado');pixelInitCheckout();goUpsell(event);" id="main-cta-btn">⚡ Eliminar o Inchaço Hoje — Acesso Imediato</a>
         <div class="cta-gar">🛡️ Garantia de 7 dias · Risco zero · Devolução total</div>
       </div>
     </div>
@@ -552,7 +552,7 @@ src="https://www.facebook.com/tr?id=1242713591247490&ev=PageView&noscript=1"/></
           <span class="up-p-por">R$47,90</span>
           <div style="font-size:12px;color:var(--txt2);margin-top:2px;">✅ Acesso imediato · Sem mensalidade</div>
         </div>
-        <a href="https://pay.hotmart.com/T93171913Y?checkoutMode=10" class="btn-up-yes" onclick="goThanks(event);fbq('track','InitiateCheckout',{value:47.90,currency:'BRL',content_name:'Upsell'});">✅ SIM! Quero Saúde Natural Descomplicada por R$47,90</a>
+        <a href="https://pay.hotmart.com/T93171913Y?checkoutMode=10" class="btn-up-yes" target="_blank" onclick="fbq('track','InitiateCheckout',{value:47.90,currency:'BRL',content_name:'Upsell'});goThanks(null);">✅ SIM! Quero Saúde Natural Descomplicada por R$47,90</a>
         <button class="btn-up-no" onclick="goDown()" style="color:#999;font-size:12px;">Não, obrigada — prefiro pagar mais depois sem este desconto.</button>
       </div>
     </div>
@@ -579,7 +579,7 @@ src="https://www.facebook.com/tr?id=1242713591247490&ev=PageView&noscript=1"/></
         <div class="up-inc"><span>🚫</span><span>Lista dos 10 alimentos que mais incham a barriga</span></div>
         <div class="up-inc"><span>⚡</span><span>Protocolo de emergência para dias de muito inchaço</span></div>
       </div>
-      <a href="https://pay.hotmart.com/T93171913Y?checkoutMode=10" class="btn-dn-yes" target="_blank">🛒 Quero aproveitar por R$19,90 →</a>
+      <a href="https://pay.hotmart.com/T93171913Y?checkoutMode=10" class="btn-dn-yes" target="_blank" onclick="goThanks(null);">🛒 Quero aproveitar por R$19,90 →</a>
       <button class="btn-dn-no" onclick="goEmailCapture()" style="color:#999;font-size:12px;">Não quero — prefiro continuar com o inchaço por enquanto.</button>
     </div>
   </div>
