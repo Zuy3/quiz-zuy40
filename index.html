@@ -1,454 +1,1262 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title>Descubra seu Perfil - Barriga Chapada em 7 Dias</title>
-<meta name="description" content="Descubra o seu padrão de inchaço e receba um protocolo personalizado de chás naturais.">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
+  <title>@zuy_silva emagrecer - Quiz de Hábitos & Conforto Abdominal</title>
+  <meta name="description" content="Descubra o motivo biológico do inchaço e receba seu protocolo de 7 dias com o @zuy_silva emagrecer.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+  
+  <style>
+    /* ========================================================
+       1. CSS RESET & MOBILE-FIRST BASE STYLES
+       ======================================================== */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-<!-- TRACKING PIXELS -->
-<script>
-!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '1242713591247490'); 
-fbq('track', 'PageView');
-</script>
-<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1242713591247490&ev=PageView&noscript=1"/></noscript>
+    :root {
+      --color-bg: #FAF9F5;
+      --color-card-bg: #FFFFFF;
+      --color-text-main: #1C1917;
+      --color-text-muted: #57534E;
+      --color-primary: #C2542A;
+      --color-primary-hover: #A9451F;
+      --color-primary-active: #8F3716;
+      --color-emerald-deep: #1E5438;
+      --color-emerald-light: #ECFDF5;
+      --color-emerald-border: #A7F3D0;
+      --color-amber-bg: #FFFBEB;
+      --color-border: #E7E5E4;
+      --font-body: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+      --font-display: 'Playfair Display', Georgia, serif;
+      --radius-sm: 0.5rem;
+      --radius-md: 0.75rem;
+      --radius-lg: 1rem;
+      --radius-xl: 1.5rem;
+      --shadow-soft: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.03);
+      --shadow-elevated: 0 20px 30px -10px rgba(0, 0, 0, 0.08), 0 10px 15px -5px rgba(0, 0, 0, 0.04);
+      --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
 
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-Z2TZQJLE7L"></script>
-<script>
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-gtag('config', 'G-Z2TZQJLE7L');
-</script>
+    html {
+      font-size: 16px;
+      scroll-behavior: smooth;
+      -webkit-text-size-adjust: 100%;
+      overflow-x: hidden;
+    }
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    body {
+      width: 100%;
+      min-height: 100vh;
+      min-height: 100dvh;
+      background-color: var(--color-bg);
+      color: var(--color-text-main);
+      font-family: var(--font-body);
+      line-height: 1.5;
+      overflow-x: hidden;
+      display: flex;
+      flex-direction: column;
+      touch-action: manipulation;
+    }
 
-<style>
-/* PRESERVANDO IDENTIDADE VISUAL E MOBILE-FIRST */
-:root {
-  --v:#1a7a54; --vc:#e8f5ee; --vm:#9fcdb8; --ve:#0f4f35;
-  --lo:#d4572a; --lc:#fdf0ea; --cr:#faf8f4; --cd:#f0ede6;
-  --td:#1c1c1a; --tm:#4a4a46; --ts:#7a7a74; --bd:#e2ddd6;
-  --gold:#c9860a; --goldbg:#fff8e6;
-  --r:14px; --rs:8px;
-}
-* { box-sizing:border-box; margin:0; padding:0; }
-body { font-family:'DM Sans', sans-serif; background:var(--cr); color:var(--td); min-height:100vh; -webkit-font-smoothing:antialiased; }
-.wrap { max-width:520px; margin:0 auto; padding:24px 20px 60px; }
+    img, svg, video {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
 
-.qheader { background:var(--ve); padding:10px 20px; text-align:center; position:sticky; top:0; z-index:10; display:none; align-items:center; justify-content:center; gap:8px; }
-.qheader.visible { display:flex; }
-.qheader-label { font-size:13px; font-weight:600; color:#fff; letter-spacing:0.04em; }
+    /* ========================================================
+       2. TYPOGRAPHY (FLUID SIZING VIA CLAMP)
+       ======================================================== */
+    h1, .h1-display {
+      font-family: var(--font-display);
+      font-size: clamp(1.35rem, 4.5vw, 2rem);
+      line-height: 1.25;
+      font-weight: 800;
+      color: var(--color-text-main);
+    }
 
-.topo { display:flex; align-items:center; justify-content:center; gap:8px; margin-bottom:24px; font-family:'Lora',serif; font-size:13px; color:var(--v); letter-spacing:0.03em; }
-.dot { width:6px; height:6px; border-radius:50%; background:var(--v); opacity:0.5; }
+    h2, .h2-display {
+      font-family: var(--font-display);
+      font-size: clamp(1.2rem, 3.8vw, 1.65rem);
+      line-height: 1.3;
+      font-weight: 700;
+    }
 
-.step { display:none; }
-.step.active { display:block; animation:slideIn 0.32s cubic-bezier(0.22,1,0.36,1); }
-@keyframes slideIn { from{opacity:0;transform:translateX(20px)} to{opacity:1;transform:translateX(0)} }
+    h3 {
+      font-size: clamp(1rem, 3vw, 1.25rem);
+      font-weight: 700;
+    }
 
-/* Tipografia e Inputs */
-h1, h2, h3 { font-family:'Lora', serif; line-height:1.35; color:var(--td); margin-bottom:10px; }
-h1 { font-size:26px; font-weight:600; }
-h2 { font-size:21px; font-weight:600; }
-p { font-size:15px; color:var(--tm); line-height:1.6; }
+    p {
+      font-size: clamp(0.875rem, 2.5vw, 1rem);
+      color: var(--color-text-muted);
+    }
 
-.qtext { font-family:'Lora', serif; font-size:20px; font-weight:600; line-height:1.4; color:var(--td); margin-bottom:6px; }
-.qsub { font-size:13px; color:var(--ts); margin-bottom:18px; line-height:1.5; }
+    /* ========================================================
+       3. RESPONSIVE CONTAINER & CARD ARCHITECTURE
+       ======================================================== */
+    .app-header {
+      width: 100%;
+      background: rgba(250, 249, 245, 0.95);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--color-border);
+      position: sticky;
+      top: 0;
+      z-index: 50;
+    }
 
-.name-inp, .email-inp { width:100%; padding:16px; border:1.5px solid var(--bd); border-radius:var(--r); font-size:16px; font-family:'DM Sans', sans-serif; background:#fff; transition:border-color 0.2s; outline:none; margin-bottom: 16px;}
-.name-inp:focus, .email-inp:focus { border-color:var(--v); }
+    .header-inner {
+      width: 92%;
+      max-width: 600px;
+      margin: 0 auto;
+      height: 3.75rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
 
-/* Botoes */
-.btn-primary { width:100%; padding:18px; background:var(--v); color:#fff; border:none; border-radius:var(--r); font-size:17px; font-weight:700; cursor:pointer; transition:all 0.2s; text-align:center; text-decoration:none; display:inline-block; }
-.btn-primary:hover { background:var(--ve); transform:translateY(-1px); }
-.btn-primary:disabled { opacity:0.5; cursor:not-allowed; }
-.btn-gold { background:var(--gold); }
-.btn-gold:hover { background:#a06d08; }
+    .brand-logo {
+      font-family: var(--font-display);
+      font-size: clamp(1.1rem, 3.5vw, 1.35rem);
+      font-weight: 800;
+      color: var(--color-emerald-deep);
+      text-decoration: none;
+      letter-spacing: -0.02em;
+    }
 
-/* Opcoes do Quiz */
-.opts { display:flex; flex-direction:column; gap:10px; margin-bottom:14px; }
-.opt { display:flex; align-items:center; gap:14px; background:#fff; border:1.5px solid var(--bd); border-radius:var(--r); padding:14px 16px; cursor:pointer; transition:all 0.2s; -webkit-tap-highlight-color:transparent; }
-.opt:hover { border-color:var(--vm); background:var(--vc); }
-.opt.sel { border-color:var(--v); background:var(--vc); }
-.oicon { width:38px; height:38px; border-radius:10px; flex-shrink:0; background:var(--cd); display:flex; align-items:center; justify-content:center; font-size:18px; }
-.opt.sel .oicon { background:rgba(26,122,84,0.15); }
-.omain { font-size:15px; color:var(--td); line-height:1.4; font-weight:600; }
-.ohint { font-size:12px; color:var(--ts); margin-top:3px; }
+    .main-wrapper {
+      flex: 1;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem 0 2.5rem;
+    }
 
-/* Loading */
-.aztrack { height:6px; background:var(--cd); border-radius:6px; overflow:hidden; margin-bottom: 20px;}
-.azfill { height:100%; background:var(--v); width:0; border-radius:6px; transition:width 0.5s ease; }
-.az-step { display:flex; align-items:center; gap:10px; opacity:0.3; transition:opacity 0.4s; margin-bottom: 12px;}
+    /* Core Quiz Card: max-width 600px desktop, 92-95% on mobile */
+    .quiz-card {
+      width: 94%;
+      max-width: 600px;
+      margin: 0 auto;
+      background: var(--color-card-bg);
+      border-radius: var(--radius-xl);
+      border: 1px solid var(--color-border);
+      box-shadow: var(--shadow-elevated);
+      padding: 1.25rem 1rem;
+      position: relative;
+      overflow: hidden;
+      transition: var(--transition-smooth);
+    }
 
-/* Resultados & Cards */
-.card { background:#fff; border:1px solid var(--bd); border-radius:var(--r); padding:20px; margin-bottom:18px; box-shadow:0 2px 20px rgba(26,122,84,0.06); }
-.ppill { display:inline-block; font-size:12px; font-weight:700; letter-spacing:0.04em; text-transform:uppercase; padding:6px 14px; border-radius:20px; margin-bottom:10px; background:var(--vc); color:var(--ve); }
-.offer-box { border:2px solid var(--v); border-radius:var(--r); background:#fff; padding:20px; margin-bottom:16px; position:relative; box-shadow:0 4px 24px rgba(26,122,84,0.14); }
-.gar-box { display:flex; gap:12px; align-items:flex-start; background:var(--vc); border:1.5px solid var(--vm); border-radius:var(--r); padding:16px; margin-bottom:18px; }
+    @media (min-width: 480px) {
+      .quiz-card {
+        padding: 1.75rem 1.5rem;
+      }
+    }
 
-/* Sticky CTA */
-.sticky-cta { position:fixed; bottom:0; left:0; right:0; background:var(--ve); padding:12px 20px; display:none; align-items:center; justify-content:space-between; gap:12px; z-index:100; box-shadow:0 -4px 20px rgba(0,0,0,0.2); }
-.sticky-cta.visible { display:flex; }
-.sticky-cta-btn { background:#f0a020; color:#fff; border:none; border-radius:10px; padding:12px 18px; font-size:14px; font-weight:700; cursor:pointer; text-decoration:none; white-space:nowrap; transition:background 0.2s; }
-</style>
+    @media (min-width: 640px) {
+      .quiz-card {
+        width: 92%;
+        padding: 2.25rem 2rem;
+      }
+    }
+
+    /* ========================================================
+       4. PROGRESS BAR (VISUAL ADVANCEMENT TRACK & BADGE)
+       ======================================================== */
+    .progress-section {
+      width: 100%;
+      margin: -1.25rem -1rem 1.25rem -1rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 1px solid var(--color-border);
+      background: #FDFCF9;
+    }
+
+    @media (min-width: 480px) {
+      .progress-section {
+        margin: -1.75rem -1.5rem 1.5rem -1.5rem;
+      }
+    }
+
+    @media (min-width: 640px) {
+      .progress-section {
+        margin: -2.25rem -2rem 1.75rem -2rem;
+      }
+    }
+
+    .progress-bar-track {
+      width: 100%;
+      height: 0.5rem;
+      background: #E5E7EB;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .progress-bar-fill {
+      height: 100%;
+      background: linear-gradient(90deg, #C2542A 0%, #E07144 50%, #1E5438 100%);
+      width: 12%;
+      transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .progress-details {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.75rem 1rem 0.25rem;
+      font-size: 0.75rem;
+    }
+
+    .step-counter {
+      font-weight: 700;
+      color: var(--color-text-main);
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+
+    .step-counter-pulse {
+      width: 0.5rem;
+      height: 0.5rem;
+      border-radius: 50%;
+      background: var(--color-primary);
+      display: inline-block;
+      animation: pulse 1.8s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.4; transform: scale(1.3); }
+    }
+
+    .badge-percent {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+      padding: 0.25rem 0.65rem;
+      border-radius: 9999px;
+      font-weight: 800;
+      font-size: 0.75rem;
+      background: var(--color-emerald-light);
+      color: var(--color-emerald-deep);
+      border: 1px solid var(--color-emerald-border);
+    }
+
+    .segmented-dots {
+      display: flex;
+      gap: 0.35rem;
+      padding: 0.35rem 1rem 0;
+    }
+
+    .dot-segment {
+      flex: 1;
+      height: 0.25rem;
+      border-radius: 9999px;
+      background: #E5E7EB;
+      transition: var(--transition-smooth);
+    }
+
+    .dot-segment.active {
+      background: var(--color-primary);
+    }
+
+    .dot-segment.completed {
+      background: var(--color-emerald-deep);
+    }
+
+    /* ========================================================
+       5. ACCESSIBLE TOUCH TARGETS & INTERACTIVE OPTIONS
+       ======================================================== */
+    .options-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 0.75rem;
+      margin: 1.25rem 0;
+    }
+
+    .options-grid-2col {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.75rem;
+      margin: 1.25rem 0;
+    }
+
+    .option-button {
+      width: 100%;
+      min-height: 3.25rem; /* Min 52px para área do polegar */
+      padding: 0.875rem 1rem;
+      border-radius: var(--radius-lg);
+      border: 1.5px solid var(--color-border);
+      background: #FFFFFF;
+      color: var(--color-text-main);
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      text-align: left;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      transition: var(--transition-smooth);
+      position: relative;
+      touch-action: manipulation;
+      user-select: none;
+    }
+
+    .option-button:hover, .option-button:active {
+      border-color: #86EFAC;
+      background: #F0FDF4;
+      transform: translateY(-1px);
+    }
+
+    .option-button.selected {
+      border-color: var(--color-emerald-deep);
+      background: #ECFDF5;
+      box-shadow: 0 0 0 2px rgba(30, 84, 56, 0.2);
+      font-weight: 700;
+    }
+
+    .option-key-badge {
+      width: 1.75rem;
+      height: 1.75rem;
+      border-radius: var(--radius-sm);
+      background: #F5F5F4;
+      color: var(--color-text-muted);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.75rem;
+      font-weight: 700;
+      flex-shrink: 0;
+      transition: var(--transition-smooth);
+    }
+
+    .option-button.selected .option-key-badge {
+      background: var(--color-emerald-deep);
+      color: #FFFFFF;
+    }
+
+    /* Grid Visual (2 Colunas) */
+    .option-button-visual {
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+      padding: 1.25rem 0.75rem;
+      gap: 0.5rem;
+    }
+
+    .visual-emoji {
+      font-size: 2rem;
+      line-height: 1;
+    }
+
+    /* Botão Principal de Conversão */
+    .btn-cta {
+      width: 100%;
+      min-height: 3.25rem; /* 52px */
+      padding: 1rem 1.5rem;
+      background: var(--color-primary);
+      color: #FFFFFF;
+      border: none;
+      border-radius: var(--radius-lg);
+      font-family: var(--font-body);
+      font-size: clamp(0.95rem, 3vw, 1.1rem);
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      box-shadow: 0 8px 20px -4px rgba(194, 84, 42, 0.4);
+      transition: var(--transition-smooth);
+      text-decoration: none;
+      touch-action: manipulation;
+    }
+
+    .btn-cta:hover {
+      background: var(--color-primary-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 12px 24px -4px rgba(194, 84, 42, 0.5);
+    }
+
+    .btn-cta:active {
+      background: var(--color-primary-active);
+      transform: translateY(0);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--color-text-muted);
+      border: none;
+      font-size: 0.875rem;
+      font-weight: 600;
+      padding: 0.5rem 1rem;
+      border-radius: var(--radius-md);
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      transition: var(--transition-smooth);
+      touch-action: manipulation;
+    }
+
+    .btn-secondary:hover {
+      color: var(--color-text-main);
+      background: #F5F5F4;
+    }
+
+    .actions-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-top: 1.5rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--color-border);
+    }
+
+    /* ========================================================
+       6. SLIDERS & METRIC CARDS
+       ======================================================== */
+    .slider-display {
+      text-align: center;
+      margin: 1.5rem 0;
+    }
+
+    .slider-number {
+      font-size: clamp(2.5rem, 8vw, 3.5rem);
+      font-weight: 900;
+      color: var(--color-emerald-deep);
+      line-height: 1;
+    }
+
+    .slider-unit {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--color-text-muted);
+      margin-left: 0.25rem;
+    }
+
+    .range-input {
+      width: 100%;
+      height: 0.6rem;
+      -webkit-appearance: none;
+      appearance: none;
+      background: #E5E7EB;
+      border-radius: 9999px;
+      outline: none;
+      margin: 1.5rem 0;
+      cursor: pointer;
+    }
+
+    .range-input::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 2rem;
+      height: 2rem;
+      border-radius: 50%;
+      background: var(--color-primary);
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(194, 84, 42, 0.4);
+      border: 3px solid #FFFFFF;
+      transition: transform 0.2s;
+    }
+
+    .range-input::-webkit-slider-thumb:hover, .range-input::-webkit-slider-thumb:active {
+      transform: scale(1.15);
+    }
+
+    /* ========================================================
+       7. AUDIO PLAYER SIMULATOR
+       ======================================================== */
+    .audio-player-box {
+      background: #F3EFE6;
+      border: 1px solid #E2DCD1;
+      border-radius: var(--radius-xl);
+      padding: 1.25rem;
+      margin: 1.5rem 0;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .audio-btn {
+      width: 3.5rem;
+      height: 3.5rem;
+      border-radius: 50%;
+      background: var(--color-emerald-deep);
+      color: #FFFFFF;
+      border: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      flex-shrink: 0;
+      box-shadow: 0 4px 12px rgba(30, 84, 56, 0.3);
+      transition: var(--transition-smooth);
+    }
+
+    .audio-btn:hover {
+      transform: scale(1.05);
+      background: #17422C;
+    }
+
+    .waveform-visual {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      gap: 3px;
+      height: 2.25rem;
+    }
+
+    .wave-bar {
+      flex: 1;
+      background: #A8A29E;
+      border-radius: 2px;
+      height: 20%;
+      transition: height 0.2s ease;
+    }
+
+    /* ========================================================
+       8. ROULETTE WHEEL
+       ======================================================== */
+    .wheel-container {
+      position: relative;
+      width: min(280px, 75vw);
+      height: min(280px, 75vw);
+      margin: 1.5rem auto;
+    }
+
+    .wheel-canvas {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      border: 6px solid #FFFFFF;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+      transition: transform 3.5s cubic-bezier(0.15, 0.9, 0.25, 1);
+    }
+
+    .wheel-pointer {
+      position: absolute;
+      top: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 0;
+      height: 0;
+      border-left: 14px solid transparent;
+      border-right: 14px solid transparent;
+      border-top: 24px solid #1C1917;
+      z-index: 10;
+      filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+    }
+
+    /* ========================================================
+       9. RESULT & TESTIMONIALS CAROUSEL
+       ======================================================== */
+    .timer-alert {
+      background: #FEF2F2;
+      border: 1px solid #FECACA;
+      border-radius: var(--radius-lg);
+      padding: 0.75rem 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      color: #991B1B;
+      font-weight: 700;
+      font-size: 0.875rem;
+      margin-bottom: 1rem;
+    }
+
+    .timer-clock {
+      font-family: monospace;
+      font-size: 1.1rem;
+      background: #991B1B;
+      color: #FFFFFF;
+      padding: 0.15rem 0.4rem;
+      border-radius: var(--radius-sm);
+    }
+
+    .testimonial-card {
+      background: #F9F8F6;
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      padding: 1rem;
+      margin: 1rem 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .faq-item {
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-md);
+      margin-bottom: 0.5rem;
+      overflow: hidden;
+      background: #FFFFFF;
+    }
+
+    .faq-question {
+      width: 100%;
+      padding: 1rem;
+      text-align: left;
+      font-weight: 700;
+      font-size: 0.95rem;
+      background: none;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .faq-answer {
+      padding: 0 1rem 1rem;
+      font-size: 0.875rem;
+      color: var(--color-text-muted);
+      line-height: 1.6;
+      display: none;
+    }
+
+    .faq-item.open .faq-answer {
+      display: block;
+    }
+
+    .text-center { text-align: center; }
+    .fade-in { animation: fadeIn 0.35s ease-out; }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(8px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
 </head>
 <body>
 
-<div class="qheader" id="topbar">
-  <span style="font-size:16px">🌿</span>
-  <span class="qheader-label">BARRIGA CHAPADA EM 7 DIAS</span>
-</div>
-
-<div class="wrap">
-  <div class="topo" id="topo"><div class="dot"></div>Descubra seu Perfil<div class="dot"></div></div>
-
-  <!-- S0: TELA INICIAL E CAPTURA DE NOME -->
-  <div class="step active" id="s0">
-    <div style="text-align:center;margin-bottom:18px;">
-      <h1>Descubra o padrão que impede sua barriga de desinchar</h1>
-      <p style="margin-top: 10px;">Responda a 5 perguntas curtas e receba uma análise personalizada e focada no seu perfil.</p>
+  <!-- Top Sticky Header -->
+  <header class="app-header">
+    <div class="header-inner">
+      <a href="#" class="brand-logo" onclick="location.reload()">@zuy_silva emagrecer</a>
+      <span style="font-size: 0.75rem; font-weight: 700; color: var(--color-emerald-deep); background: var(--color-emerald-light); padding: 0.25rem 0.6rem; border-radius: 9999px;">
+        Avaliação Ativa
+      </span>
     </div>
-    
-    <label style="font-size:14px;font-weight:600;margin-bottom:8px;display:block;">👋 Como podemos te chamar?</label>
-    <input type="text" id="inp-name" class="name-inp" placeholder="Seu primeiro nome" autocomplete="given-name">
-    
-    <button class="btn-primary" onclick="iniciarQuiz()">COMEÇAR ANÁLISE →</button>
-    
-    <div style="text-align:center; margin-top:16px; font-size:12px; color:var(--ts);">
-      <span>🔒 100% gratuito e seguro</span> | <span>⏱️ 1 minuto</span>
+  </header>
+
+  <!-- Main Dynamic Stage -->
+  <main class="main-wrapper">
+    <div class="quiz-card" id="quiz-container">
+      <!-- Steps will be injected dynamically by JavaScript below -->
     </div>
-  </div>
+  </main>
 
-  <!-- S1: FAIXA ETÁRIA -->
-  <div class="step" id="s1">
-    <div class="qtext">Qual é a sua faixa etária?</div>
-    <div class="qsub">O comportamento do corpo muda conforme a fase da vida. Isso nos ajuda a entender seu momento.</div>
-    <div class="opts">
-      <div class="opt" onclick="selecionar(1, '30-40')"><div class="oicon">🌿</div><div class="obody"><div class="omain">30 a 40 anos</div></div></div>
-      <div class="opt" onclick="selecionar(1, '41-50')"><div class="oicon">🔥</div><div class="obody"><div class="omain">41 a 50 anos</div></div></div>
-      <div class="opt" onclick="selecionar(1, '51-60')"><div class="oicon">🦋</div><div class="obody"><div class="omain">51 a 60 anos</div></div></div>
-      <div class="opt" onclick="selecionar(1, '60+')"><div class="oicon">👑</div><div class="obody"><div class="omain">Acima de 60 anos</div></div></div>
-    </div>
-  </div>
+  <script>
+    /* ========================================================
+       DATA & FLOW CONFIGURATION
+       ======================================================== */
+    const HOTMART_CHECKOUT_URL = "https://pay.hotmart.com/T93171913Y?checkoutMode=10";
 
-  <!-- S2: FREQUÊNCIA INCHAÇO -->
-  <div class="step" id="s2">
-    <div class="qtext">Com que frequência você sente desconforto e inchaço?</div>
-    <div class="opts">
-      <div class="opt" onclick="selecionar(2, 'constante')"><div class="oicon">😟</div><div class="obody"><div class="omain">Quase sempre, desde que acordo</div></div></div>
-      <div class="opt" onclick="selecionar(2, 'tarde')"><div class="oicon">🌇</div><div class="obody"><div class="omain">Piora ao longo do dia, à tarde/noite</div></div></div>
-      <div class="opt" onclick="selecionar(2, 'apos_comer')"><div class="oicon">🍽️</div><div class="obody"><div class="omain">Sempre depois de certas refeições</div></div></div>
-      <div class="opt" onclick="selecionar(2, 'variavel')"><div class="oicon">📅</div><div class="obody"><div class="omain">Varia muito, sem um padrão claro</div></div></div>
-    </div>
-  </div>
+    const state = {
+      step: 'hero',
+      currentQuestionIndex: 0,
+      leadName: '',
+      height: 165,
+      weight: 75,
+      targetWeight: 65,
+      answers: {},
+      wonBonus: '10 Bebidas Funcionais (R$ 7,90 Grátis)'
+    };
 
-  <!-- S3: IMPACTO -->
-  <div class="step" id="s3">
-    <div class="qtext">O que mais te incomoda nessa situação hoje?</div>
-    <div class="opts">
-      <div class="opt" onclick="selecionar(3, 'roupas')"><div class="oicon">👗</div><div class="obody"><div class="omain">Roupas apertando ou deixando de servir</div></div></div>
-      <div class="opt" onclick="selecionar(3, 'energia')"><div class="oicon">💤</div><div class="obody"><div class="omain">Sensação de peso e cansaço constante</div></div></div>
-      <div class="opt" onclick="selecionar(3, 'autoestima')"><div class="oicon">📸</div><div class="obody"><div class="omain">Evitar fotos e não me sentir bem no espelho</div></div></div>
-    </div>
-  </div>
+    const questions = [
+      {
+        id: 'q1',
+        title: 'Qual região do seu corpo mais acumula inchaço ou desconforto?',
+        subtitle: 'Selecione a área onde você mais sente peso ou roupas apertando:',
+        type: 'grid_visual',
+        options: [
+          { id: 'belly', label: 'Barriga e Abdômen', emoji: '🤰' },
+          { id: 'waist', label: 'Cintura e Culotes', emoji: '⏳' },
+          { id: 'thighs', label: 'Pernas e Coxas', emoji: '🦵' },
+          { id: 'whole', label: 'Corpo Inteiro', emoji: '💧' }
+        ]
+      },
+      {
+        id: 'q2',
+        title: 'Como podemos te chamar durante o diagnóstico?',
+        subtitle: 'Personalizaremos suas recomendações biológicas e o plano de 7 dias:',
+        type: 'name_input'
+      },
+      {
+        id: 'q3',
+        title: 'Em qual momento do dia sua barriga mais estufa?',
+        subtitle: 'Isso revela o tipo de lentidão e fermentação no seu trato digestivo:',
+        type: 'standard',
+        options: [
+          { id: 'after_lunch', label: 'Logo após o almoço ou refeições', letter: 'A' },
+          { id: 'late_afternoon', label: 'No fim da tarde / entardecer', letter: 'B' },
+          { id: 'night', label: 'À noite, parecendo grávida de 4 meses', letter: 'C' },
+          { id: 'all_day', label: 'Já acordo inchada e piora ao longo do dia', letter: 'D' }
+        ]
+      },
+      {
+        id: 'q4',
+        title: 'Qual é a sua altura aproximada?',
+        subtitle: 'Necessário para calcular a proporção hídrica corporal:',
+        type: 'slider_height'
+      },
+      {
+        id: 'q5',
+        title: 'Qual é o seu peso atual aproximado?',
+        subtitle: 'Para mapear o sobrepeso metabólico versus retenção líquida:',
+        type: 'slider_weight'
+      },
+      {
+        id: 'q6',
+        title: 'Qual seria o seu peso meta desejado?',
+        subtitle: 'O peso em que você se sente leve, disposta e com roupas confortáveis:',
+        type: 'slider_target'
+      },
+      {
+        id: 'q7',
+        title: 'Ouça o áudio real de quem eliminou o inchaço:',
+        subtitle: 'Veja como a Neuza destravou o metabolismo nos primeiros dias:',
+        type: 'audio_interlude'
+      }
+    ];
 
-  <!-- S4: INTESTINO (A mais importante para a segmentação) -->
-  <div class="step" id="s4">
-    <div class="qtext">Como você descreveria o funcionamento da sua rotina intestinal?</div>
-    <div class="qsub">Seja sincera, isso é essencial para encontrar o melhor caminho.</div>
-    <div class="opts">
-      <div class="opt" onclick="selecionar(4, 'lento')"><div class="oicon">🛑</div><div class="obody"><div class="omain">Lento (2 dias ou mais sem ir)</div></div></div>
-      <div class="opt" onclick="selecionar(4, 'gases')"><div class="oicon">💨</div><div class="obody"><div class="omain">Funciona, mas com muitos gases/desconforto</div></div></div>
-      <div class="opt" onclick="selecionar(4, 'irregular')"><div class="oicon">⚖️</div><div class="obody"><div class="omain">Irregular (dias preso, dias solto)</div></div></div>
-      <div class="opt" onclick="selecionar(4, 'regular')"><div class="oicon">✅</div><div class="obody"><div class="omain">Regular, o problema é puramente abdominal</div></div></div>
-    </div>
-  </div>
+    const container = document.getElementById('quiz-container');
 
-  <!-- S5: OBJETIVO PRINCIPAL -->
-  <div class="step" id="s5">
-    <div class="qtext">Qual é a sua principal meta nas próximas semanas?</div>
-    <div class="opts">
-      <div class="opt" onclick="selecionar(5, 'desinchar')"><div class="oicon">✨</div><div class="obody"><div class="omain">Desinchar rapidamente e me sentir leve</div></div></div>
-      <div class="opt" onclick="selecionar(5, 'habitos')"><div class="oicon">🥗</div><div class="obody"><div class="omain">Criar uma rotina sustentável e saudável</div></div></div>
-      <div class="opt" onclick="selecionar(5, 'conforto')"><div class="oicon">💆‍♀️</div><div class="obody"><div class="omain">Acabar com as dores e desconfortos abdominais</div></div></div>
-    </div>
-  </div>
+    /* ========================================================
+       RENDER ENGINE
+       ======================================================== */
+    function render() {
+      container.innerHTML = '';
+      window.scrollTo({ top: 0, behavior: 'smooth' });
 
-  <!-- S6: LOADING -->
-  <div class="step" id="s6">
-    <div style="text-align:center; padding: 40px 0;">
-      <h3 style="margin-bottom:16px;">Analisando suas respostas...</h3>
-      <div class="aztrack"><div class="azfill" id="loading-bar"></div></div>
-      
-      <div id="loading-steps">
-        <div class="az-step" id="ls-1"><span>⏳</span><span> Cruzando padrões de rotina...</span></div>
-        <div class="az-step" id="ls-2"><span>⏳</span><span> Identificando perfil principal...</span></div>
-        <div class="az-step" id="ls-3"><span>⏳</span><span> Preparando recomendação personalizada...</span></div>
-      </div>
-    </div>
-  </div>
+      if (state.step === 'hero') {
+        renderHero();
+      } else if (state.step === 'quiz') {
+        renderQuestion();
+      } else if (state.step === 'analyzing') {
+        renderAnalyzing();
+      } else if (state.step === 'bmi_alert') {
+        renderBmiAlert();
+      } else if (state.step === 'wheel') {
+        renderWheel();
+      } else if (state.step === 'lead_form') {
+        renderLeadForm();
+      } else if (state.step === 'result') {
+        renderResult();
+      }
+    }
 
-  <!-- S7: CAPTURA DE EMAIL -->
-  <div class="step" id="s7">
-    <div style="text-align:center;margin-bottom:20px;">
-      <div style="font-size:36px; margin-bottom:10px;">📩</div>
-      <h2>Seu resultado está pronto!</h2>
-      <p>Digite seu melhor e-mail para desbloquear o resultado e receber uma cópia do seu perfil.</p>
-    </div>
-    <input type="email" id="inp-email" class="email-inp" placeholder="seu@email.com" oninput="validarEmail()">
-    <button class="btn-primary" id="btn-email" onclick="capturarLead()" disabled>VER MEU RESULTADO →</button>
-    <p style="font-size:12px; text-align:center; margin-top:12px;">Suas informações estão seguras.</p>
-  </div>
+    /* 1. HERO SCREEN */
+    function renderHero() {
+      container.innerHTML = `
+        <div class="fade-in">
+          <div style="background: var(--color-primary); color: #fff; padding: 0.35rem 0.75rem; border-radius: var(--radius-sm); font-size: 0.75rem; font-weight: 800; text-transform: uppercase; text-align: center; margin-bottom: 1rem;">
+            Avaliação Oficial de Hábitos & Digestão
+          </div>
 
-  <!-- S8: RESULTADO PERSONALIZADO + OFERTA -->
-  <div class="step" id="s8">
-    <div class="card" style="text-align:center; background:var(--ve); color:#fff;">
-      <p style="font-size:14px; font-weight:600; color:var(--vm); text-transform:uppercase; margin-bottom:4px;">Seu Perfil Identificado</p>
-      <h2 id="res-title" style="color:#fff; font-size:24px; margin-bottom:10px;">Perfil Intestinal Lento</h2>
-      <p id="res-greeting" style="font-size:15px; color:#e8f5ee; margin-bottom:0;">Análise baseada nas suas respostas.</p>
-    </div>
+          <h1 style="margin-bottom: 1rem;">
+            Você acorda com a barriga reta e termina o dia parecendo que está grávida de 4 meses?
+          </h1>
 
-    <div class="card">
-      <h3 style="font-size:18px; margin-bottom:12px;">O que as suas respostas indicam:</h3>
-      <p id="res-desc" style="margin-bottom:16px;">O ritmo do seu corpo está pedindo ajustes. Quando o trânsito intestinal não flui corretamente, o desconforto e a sensação de peso se tornam constantes. O objetivo não é privação, mas sim oferecer os estímulos certos.</p>
-      
-      <div style="background:var(--vc); border-left:4px solid var(--v); padding:14px; border-radius:0 8px 8px 0;">
-        <h4 style="font-size:14px; color:var(--ve); margin-bottom:6px;">Sua Prioridade Agora:</h4>
-        <p id="res-priority" style="font-size:13px; color:var(--ve);">Incluir ingredientes específicos que auxiliam o trânsito e promovem alívio natural na sua rotina diária.</p>
-      </div>
-    </div>
+          <p style="margin-bottom: 1.25rem;">
+            Se ao entardecer você precisa desabotoar o botão da calça e sofre com peso no estômago, o motivo <strong>não é gordura: é fermentação alimentar e retenção hídrica</strong>.
+          </p>
 
-    <!-- Oferta Principal (Mantendo a identidade validada e checkout da Hotmart) -->
-    <div class="offer-box">
-      <div style="text-align:center; margin-bottom:16px;">
-        <div class="ppill">Recomendação Estratégica</div>
-        <h3 style="font-size:20px;">Barriga Chapada em 7 Dias</h3>
-        <p style="font-size:14px; margin-top:6px;">Protocolo prático de chás e rotinas para ajudar a desinchar e retomar seu conforto, adaptável ao seu dia a dia.</p>
-      </div>
+          <div style="background: #F9F8F6; border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: 1rem; margin-bottom: 1.5rem; display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.875rem;">
+            <div>✅ <strong>60 segundos:</strong> 7 perguntas rápidas para mapear sua digestão.</div>
+            <div>✅ <strong>Identifique os alimentos:</strong> Descubra o que mais fermenta em você.</div>
+            <div>✅ <strong>Plano prático de 7 dias:</strong> Como desinchar e aliviar a cintura.</div>
+          </div>
 
-      <div style="display:flex; flex-direction:column; gap:8px; margin-bottom:20px; font-size:14px;">
-        <div><span style="color:var(--v); font-weight:bold;">✓</span> Protocolo passo a passo de 7 dias</div>
-        <div><span style="color:var(--v); font-weight:bold;">✓</span> 50 Receitas Naturais Simples</div>
-        <div><span style="color:var(--v); font-weight:bold;">✓</span> Acesso imediato pelo celular</div>
-      </div>
-
-      <div class="gar-box">
-        <div style="font-size:32px;">🛡️</div>
-        <div>
-          <h4 style="font-size:15px; color:var(--ve); margin-bottom:4px;">Garantia de 7 Dias</h4>
-          <p style="font-size:13px;">Sem risco. Se não se adaptar, o reembolso é integral e simplificado pela Hotmart.</p>
+          <button class="btn-cta" onclick="startQuiz()">
+            QUERO DESCOBRIR A CAUSA DO MEU INCHAÇO →
+          </button>
         </div>
-      </div>
+      `;
+    }
 
-      <div style="text-align:center; margin-bottom:16px;">
-        <p style="text-decoration:line-through; font-size:14px; color:var(--ts);">De R$ 97,00</p>
-        <p style="font-size:36px; font-family:'Lora',serif; font-weight:bold; color:var(--v); line-height:1;">R$ 29,90</p>
-      </div>
+    function startQuiz() {
+      state.step = 'quiz';
+      state.currentQuestionIndex = 0;
+      render();
+    }
 
-      <a id="checkout-link" href="https://pay.hotmart.com/T93171913Y?checkoutMode=10" class="btn-primary" onclick="trackCheckout()">
-        QUERO COMEÇAR MEU PROTOCOLO →
-      </a>
-    </div>
-    
-    <div style="text-align:center; margin-bottom:30px;">
-      <p style="font-size:12px; color:var(--ts);">Resultados podem variar de pessoa para pessoa. Compra segura via Hotmart.</p>
-    </div>
-  </div>
-</div>
+    /* 2. PROGRESS BAR COMPONENT */
+    function getProgressBarHtml(current, total) {
+      const percent = Math.min(100, Math.round((current / total) * 100));
+      let dotsHtml = '';
+      for (let i = 1; i <= total; i++) {
+        let status = i < current ? 'completed' : i === current ? 'active' : '';
+        dotsHtml += `<div class="dot-segment ${status}"></div>`;
+      }
 
-<!-- Sticky CTA -->
-<div class="sticky-cta" id="sticky-cta">
-  <div style="color:#fff; font-size:13px; line-height:1.4;">
-    <strong style="display:block; font-size:15px;">Protocolo Completo</strong>
-    Apenas R$ 29,90
-  </div>
-  <a href="#checkout-link" class="sticky-cta-btn" onclick="document.getElementById('checkout-link').click()">QUERO COMEÇAR</a>
-</div>
+      return `
+        <div class="progress-section">
+          <div class="progress-bar-track">
+            <div class="progress-bar-fill" style="width: ${percent}%;"></div>
+          </div>
+          <div class="progress-details">
+            <div class="step-counter">
+              <span class="step-counter-pulse"></span>
+              Pergunta <strong>${current}</strong> de ${total}
+            </div>
+            <div class="badge-percent">
+              ✨ ${percent}% Concluído
+            </div>
+          </div>
+          <div class="segmented-dots">
+            ${dotsHtml}
+          </div>
+        </div>
+      `;
+    }
 
-<script>
-/* =========================================
-   ESTADO GLOBAL E TRACKING
-========================================= */
-const state = {
-  name: '', email: '',
-  q1: '', q2: '', q3: '', q4: '', q5: '',
-  profile: '', score: 0,
-  utmParams: ''
-};
+    /* 3. QUESTION CONTROLLER */
+    function renderQuestion() {
+      const q = questions[state.currentQuestionIndex];
+      const stepNum = state.currentQuestionIndex + 1;
+      const totalSteps = questions.length;
 
-function init() {
-  const params = new URLSearchParams(window.location.search);
-  state.utmParams = params.toString();
-  trackEvent('page_view');
-}
-window.onload = init;
+      let formattedTitle = q.title.replace('{nome}', state.leadName || 'você');
+      let bodyHtml = '';
 
-function trackEvent(eventName, eventData = {}) {
-  // GTAG
-  if(typeof gtag === 'function') { gtag('event', eventName, eventData); }
-  // FB Pixel
-  if(typeof fbq === 'function') { 
-    if(eventName === 'page_view') fbq('track', 'PageView');
-    else fbq('trackCustom', eventName, eventData); 
-  }
-}
+      if (q.type === 'grid_visual') {
+        bodyHtml = `
+          <div class="options-grid-2col">
+            ${q.options.map(opt => `
+              <button class="option-button option-button-visual" onclick="selectOption('${opt.id}')">
+                <span class="visual-emoji">${opt.emoji}</span>
+                <span style="font-weight: 700; font-size: 0.95rem;">${opt.label}</span>
+              </button>
+            `).join('')}
+          </div>
+        `;
+      } else if (q.type === 'name_input') {
+        bodyHtml = `
+          <div style="margin: 1.5rem 0;">
+            <input 
+              type="text" 
+              id="name-field" 
+              placeholder="Digite seu primeiro nome..." 
+              value="${state.leadName}"
+              style="width: 100%; min-height: 3.25rem; padding: 0.85rem 1rem; border-radius: var(--radius-md); border: 2px solid var(--color-border); font-size: 1.1rem; outline: none; font-family: inherit;"
+              oninput="state.leadName = this.value.trim()"
+              onkeydown="if(event.key === 'Enter') advanceFromName()"
+            />
+            <p style="font-size: 0.8rem; margin-top: 0.5rem; color: var(--color-text-muted);">
+              🔒 Usado apenas para personalizar seu diagnóstico e o protocolo.
+            </p>
+          </div>
+          <button class="btn-cta" onclick="advanceFromName()">
+            CONTINUAR →
+          </button>
+        `;
+      } else if (q.type === 'standard') {
+        bodyHtml = `
+          <div class="options-grid">
+            ${q.options.map(opt => `
+              <button class="option-button" onclick="selectOption('${opt.id}')">
+                <span class="option-key-badge">${opt.letter}</span>
+                <span style="flex: 1;">${opt.label}</span>
+              </button>
+            `).join('')}
+          </div>
+        `;
+      } else if (q.type === 'slider_height') {
+        bodyHtml = `
+          <div class="slider-display">
+            <span class="slider-number" id="height-val">${(state.height / 100).toFixed(2).replace('.', ',')}</span>
+            <span class="slider-unit">m</span>
+          </div>
+          <input 
+            type="range" 
+            min="140" 
+            max="205" 
+            value="${state.height}" 
+            class="range-input" 
+            oninput="state.height = Number(this.value); document.getElementById('height-val').innerText = (this.value / 100).toFixed(2).replace('.', ',');"
+          />
+          <button class="btn-cta" onclick="nextQuestion()">
+            CONFIRMAR ALTURA →
+          </button>
+        `;
+      } else if (q.type === 'slider_weight') {
+        bodyHtml = `
+          <div class="slider-display">
+            <span class="slider-number" id="weight-val">${state.weight}</span>
+            <span class="slider-unit">kg</span>
+          </div>
+          <input 
+            type="range" 
+            min="45" 
+            max="140" 
+            value="${state.weight}" 
+            class="range-input" 
+            oninput="state.weight = Number(this.value); document.getElementById('weight-val').innerText = this.value;"
+          />
+          <button class="btn-cta" onclick="nextQuestion()">
+            CONFIRMAR PESO ATUAL →
+          </button>
+        `;
+      } else if (q.type === 'slider_target') {
+        bodyHtml = `
+          <div class="slider-display">
+            <span class="slider-number" id="target-val">${state.targetWeight}</span>
+            <span class="slider-unit">kg</span>
+          </div>
+          <p style="text-align: center; font-size: 0.85rem; margin-bottom: 0.5rem; color: var(--color-emerald-deep); font-weight: 700;">
+            Meta de alívio: -${Math.max(0, state.weight - state.targetWeight)} kg
+          </p>
+          <input 
+            type="range" 
+            min="40" 
+            max="120" 
+            value="${state.targetWeight}" 
+            class="range-input" 
+            oninput="state.targetWeight = Number(this.value); document.getElementById('target-val').innerText = this.value;"
+          />
+          <button class="btn-cta" onclick="nextQuestion()">
+            CONFIRMAR PESO META →
+          </button>
+        `;
+      } else if (q.type === 'audio_interlude') {
+        bodyHtml = `
+          <div class="audio-player-box">
+            <button class="audio-btn" id="play-btn" onclick="toggleAudioDemo()">
+              ▶
+            </button>
+            <div style="flex: 1;">
+              <strong style="display: block; font-size: 0.95rem; color: #1C1917;">Áudio de Neuza (52 anos)</strong>
+              <span style="font-size: 0.8rem; color: #78716C;">"Desinchei 3kg de estufamento já na primeira semana..."</span>
+              <div class="waveform-visual" id="waveform">
+                ${Array.from({length: 24}).map((_, i) => `<div class="wave-bar" style="height: ${20 + (i % 5) * 15}%;"></div>`).join('')}
+              </div>
+            </div>
+          </div>
+          <button class="btn-cta" onclick="nextQuestion()">
+            OUVIR & CONTINUAR DIAGNÓSTICO →
+          </button>
+        `;
+      }
 
-function irPara(stepId) {
-  document.querySelectorAll('.step').forEach(s => {
-    s.classList.remove('active');
-    setTimeout(() => { if(!s.classList.contains('active')) s.style.display = 'none'; }, 300);
-  });
-  const target = document.getElementById(stepId);
-  target.style.display = 'block';
-  setTimeout(() => target.classList.add('active'), 10);
-  window.scrollTo({top: 0, behavior: 'smooth'});
-}
+      container.innerHTML = `
+        <div class="fade-in">
+          ${getProgressBarHtml(stepNum, totalSteps)}
+          <h2>${formattedTitle}</h2>
+          <p style="margin-top: 0.35rem;">${q.subtitle}</p>
+          ${bodyHtml}
+          ${state.currentQuestionIndex > 0 ? `
+            <div class="actions-footer">
+              <button class="btn-secondary" onclick="prevQuestion()">
+                ← Voltar
+              </button>
+            </div>
+          ` : ''}
+        </div>
+      `;
+    }
 
-/* =========================================
-   LÓGICA DO QUIZ
-========================================= */
-function iniciarQuiz() {
-  const name = document.getElementById('inp-name').value.trim();
-  if(!name) {
-    document.getElementById('inp-name').style.borderColor = 'red';
-    return;
-  }
-  state.name = name;
-  document.getElementById('topbar').classList.add('visible');
-  document.getElementById('topo').style.display = 'none';
-  trackEvent('quiz_start');
-  irPara('s1');
-}
+    function selectOption(optId) {
+      const q = questions[state.currentQuestionIndex];
+      state.answers[q.id] = optId;
+      nextQuestion();
+    }
 
-function selecionar(qNumber, valor) {
-  state[`q${qNumber}`] = valor;
-  trackEvent(`quiz_question_${qNumber}`, { answer: valor });
-  
-  if(qNumber < 5) {
-    irPara(`s${qNumber + 1}`);
-  } else {
-    iniciarLoading();
-  }
-}
+    function advanceFromName() {
+      const field = document.getElementById('name-field');
+      if (field && field.value.trim().length >= 2) {
+        state.leadName = field.value.trim();
+        nextQuestion();
+      } else {
+        alert('Por favor, informe seu primeiro nome para continuarmos.');
+      }
+    }
 
-function iniciarLoading() {
-  irPara('s6');
-  
-  // Barra de progresso animada (5 segundos totais)
-  const bar = document.getElementById('loading-bar');
-  setTimeout(() => { bar.style.width = '30%'; document.getElementById('ls-1').style.opacity = '1'; }, 1000);
-  setTimeout(() => { bar.style.width = '70%'; document.getElementById('ls-2').style.opacity = '1'; }, 2500);
-  setTimeout(() => { bar.style.width = '100%'; document.getElementById('ls-3').style.opacity = '1'; }, 4000);
-  
-  setTimeout(() => { processarResultados(); }, 5000);
-}
+    function prevQuestion() {
+      if (state.currentQuestionIndex > 0) {
+        state.currentQuestionIndex--;
+        render();
+      }
+    }
 
-/* =========================================
-   PROCESSAMENTO E SEGMENTAÇÃO
-========================================= */
-function processarResultados() {
-  // Lead Scoring & Profiling baseado nas respostas reais
-  if (state.q4 === 'lento' || state.q4 === 'irregular') {
-    state.profile = 'INTESTINAL';
-    state.score = 80;
-  } else if (state.q4 === 'gases') {
-    state.profile = 'GASES';
-    state.score = 70;
-  } else if (state.q1 === '51-60' || state.q1 === '60+') {
-    state.profile = 'HORMONAL';
-    state.score = 65;
-  } else {
-    state.profile = 'MISTO';
-    state.score = 50;
-  }
+    function nextQuestion() {
+      if (state.currentQuestionIndex < questions.length - 1) {
+        state.currentQuestionIndex++;
+        render();
+      } else {
+        state.step = 'analyzing';
+        render();
+      }
+    }
 
-  irPara('s7');
-}
+    let isAudioPlaying = false;
+    function toggleAudioDemo() {
+      isAudioPlaying = !isAudioPlaying;
+      const btn = document.getElementById('play-btn');
+      if (btn) btn.innerText = isAudioPlaying ? '❚❚' : '▶';
+    }
 
-function validarEmail() {
-  const email = document.getElementById('inp-email').value;
-  const btn = document.getElementById('btn-email');
-  btn.disabled = !email.includes('@') || !email.includes('.');
-}
+    /* 4. ANALYZING SCREEN */
+    function renderAnalyzing() {
+      container.innerHTML = `
+        <div class="fade-in text-center" style="padding: 1.5rem 0;">
+          <div style="font-size: 2.5rem; margin-bottom: 0.5rem; animation: pulse 1s infinite;">⚙️</div>
+          <h2>Processando suas respostas...</h2>
+          <p style="margin-top: 0.5rem;">Cruzando seus hábitos digestivos com a base clínica de @zuy_silva emagrecer.</p>
+          <div style="width: 100%; height: 0.6rem; background: #E5E7EB; border-radius: 9999px; overflow: hidden; margin: 1.5rem 0;">
+            <div id="analyze-bar" style="height: 100%; width: 10%; background: var(--color-emerald-deep); transition: width 0.1s linear;"></div>
+          </div>
+          <div id="analyze-status" style="font-size: 0.85rem; font-weight: 700; color: var(--color-emerald-deep);">
+            Mapeando velocidade intestinal...
+          </div>
+        </div>
+      `;
 
-function capturarLead() {
-  state.email = document.getElementById('inp-email').value.trim();
-  
-  const payload = {
-    first_name: state.name,
-    email: state.email,
-    profile: state.profile,
-    score: state.score,
-    utm: state.utmParams
-  };
-  
-  trackEvent('lead_submit', payload);
+      let progress = 10;
+      const bar = document.getElementById('analyze-bar');
+      const status = document.getElementById('analyze-status');
+      const timer = setInterval(() => {
+        progress += 5;
+        if (bar) bar.style.width = progress + '%';
+        if (progress === 40 && status) status.innerText = 'Identificando alimentos que geram fermentação...';
+        if (progress === 75 && status) status.innerText = 'Estruturando cronograma prático de 7 dias...';
+        if (progress >= 100) {
+          clearInterval(timer);
+          setTimeout(() => {
+            state.step = 'bmi_alert';
+            render();
+          }, 400);
+        }
+      }, 70);
+    }
 
-  // Integração EmailOctopus preservada do código original (assincrona p/ n bloquear o UX)
-  fetch('https://quiz-proxy.marianozuy37.workers.dev', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(payload)
-  }).catch(e => console.log('Envio bg:', e));
+    /* 5. BMI ALERT SCREEN */
+    function renderBmiAlert() {
+      const heightM = state.height / 100;
+      const imc = (state.weight / (heightM * heightM)).toFixed(1).replace('.', ',');
 
-  renderizarResultado();
-}
+      container.innerHTML = `
+        <div class="fade-in text-center">
+          <span style="background: #FEF3C7; color: #92400E; padding: 0.35rem 0.75rem; border-radius: 9999px; font-size: 0.75rem; font-weight: 800; text-transform: uppercase;">
+            ⚠️ Diagnóstico Preliminar
+          </span>
+          <h2 style="color: #DC2626; margin: 0.75rem 0 0.5rem;">
+            Atenção${state.leadName ? `, ${state.leadName}` : ''}! Seu corpo está em estado de RETENÇÃO E FERMENTAÇÃO
+          </h2>
+          <p>Seu Índice de Massa Corporal aponta <strong>${imc} kg/m²</strong>.</p>
+          <div style="background: #FEF2F2; border: 1.5px solid #FCA5A5; border-radius: var(--radius-lg); padding: 1.25rem; margin: 1.25rem 0; text-align: left; font-size: 0.875rem; line-height: 1.6;">
+            <strong>Por que você não consegue desinchar apenas com dieta?</strong><br>
+            Quando o intestino retém gases por fermentação de alimentos específicos e digestão lenta, a parede abdominal expande mecanicamente. O seu protocolo age diretamente nessa distensão antes da perda de gordura.
+          </div>
+          <button class="btn-cta" onclick="state.step = 'wheel'; render();">
+            GIRAR ROLETA DE BÔNUS →
+          </button>
+        </div>
+      `;
+    }
 
-/* =========================================
-   PERSONALIZAÇÃO DA TELA DE RESULTADO
-========================================= */
-function renderizarResultado() {
-  document.getElementById('res-greeting').innerText = `${state.name}, com base nas suas respostas, aqui está a sua análise.`;
-  
-  const titulo = document.getElementById('res-title');
-  const desc = document.getElementById('res-desc');
-  const prio = document.getElementById('res-priority');
+    /* 6. BONUS WHEEL SCREEN */
+    function renderWheel() {
+      container.innerHTML = `
+        <div class="fade-in text-center">
+          <span style="background: var(--color-emerald-light); color: var(--color-emerald-deep); padding: 0.35rem 0.75rem; border-radius: 9999px; font-size: 0.75rem; font-weight: 800; text-transform: uppercase;">
+            🎁 Presente Exclusivo
+          </span>
+          <h2 style="margin: 0.75rem 0 0.35rem;">Gire a Roleta e Ganhe um Bônus</h2>
+          <p>Libere um presente complementar para acelerar seu desinchaço:</p>
 
-  if(state.profile === 'INTESTINAL') {
-    titulo.innerText = "Padrão Intestinal Lento";
-    desc.innerText = "Sua dificuldade em desinchar está diretamente ligada ao ritmo lento da sua digestão. Quando o trânsito para, o desconforto acumula.";
-    prio.innerText = "Focar em hábitos matinais e chás que auxiliam a motilidade sem irritar o estômago.";
-  } 
-  else if (state.profile === 'GASES') {
-    titulo.innerText = "Padrão de Fermentação";
-    desc.innerText = "O inchaço que você sente ocorre porque o seu corpo está fermentando certos compostos. Isso gera a sensação de barriga estufada mesmo quando você come pouco.";
-    prio.innerText = "Priorizar chás carminativos (que ajudam na dissipação de gases) após as principais refeições.";
-  }
-  else if (state.profile === 'HORMONAL') {
-    titulo.innerText = "Padrão de Transição";
-    desc.innerText = "As mudanças da sua faixa etária exigem uma adaptação na rotina. O que funcionava antes pode não ser eficiente agora porque o ritmo do seu corpo mudou.";
-    prio.innerText = "Utilizar protocolos que auxiliam não só a digestão, mas também contribuem para o equilíbrio do bem-estar geral.";
-  }
-  else {
-    titulo.innerText = "Padrão Variável";
-    desc.innerText = "O seu desconforto não tem um único gatilho, ele varia conforme o stress, alimentação e rotina.";
-    prio.innerText = "Criar uma base de hábitos consistentes, com chás de ação suave ao longo de todo o dia para estabilizar a digestão.";
-  }
+          <div class="wheel-container">
+            <div class="wheel-pointer"></div>
+            <div class="wheel-canvas" id="wheel-disc" style="background: conic-gradient(#b8532c 0 60deg, #d32f2f 60deg 120deg, #2e7d32 120deg 180deg, #b78103 180deg 240deg, #1f4a32 240deg 300deg, #e65100 300deg 360deg);"></div>
+          </div>
 
-  // Prepara Checkout com UTMs
-  const btnCheckout = document.getElementById('checkout-link');
-  let baseCheckoutUrl = "https://pay.hotmart.com/T93171913Y?checkoutMode=10";
-  if(state.utmParams) {
-    baseCheckoutUrl += "&" + state.utmParams;
-  }
-  btnCheckout.href = baseCheckoutUrl;
+          <button class="btn-cta" id="spin-btn" onclick="spinWheelAction()">
+            GIRAR ROLETA AGORA 🎯
+          </button>
+        </div>
+      `;
+    }
 
-  irPara('s8');
-  trackEvent('result_view', { profile: state.profile });
+    function spinWheelAction() {
+      const disc = document.getElementById('wheel-disc');
+      const btn = document.getElementById('spin-btn');
+      if (btn) btn.disabled = true;
 
-  // Ativa Sticky CTA
-  setTimeout(() => {
-    document.getElementById('sticky-cta').classList.add('visible');
-  }, 2000);
-}
+      const randomDegree = 1800 + Math.floor(Math.random() * 360);
+      if (disc) disc.style.transform = `rotate(${randomDegree}deg)`;
 
-function trackCheckout() {
-  trackEvent('checkout_click');
-}
-</script>
+      setTimeout(() => {
+        state.step = 'lead_form';
+        render();
+      }, 3600);
+    }
+
+    /* 7. LEAD FORM SCREEN */
+    function renderLeadForm() {
+      container.innerHTML = `
+        <div class="fade-in">
+          <span style="background: var(--color-emerald-light); color: var(--color-emerald-deep); padding: 0.35rem 0.75rem; border-radius: 9999px; font-size: 0.75rem; font-weight: 800; text-transform: uppercase;">
+            ✅ Diagnóstico Concluído
+          </span>
+          <h2 style="margin: 0.75rem 0 0.5rem;">
+            ${state.leadName || 'Parabéns'}, seu protocolo de 7 dias está pronto!
+          </h2>
+          <p style="margin-bottom: 1.25rem;">
+            Informe seu e-mail e WhatsApp para desbloquear seu resultado completo e receber a confirmação de acesso:
+          </p>
+
+          <div style="display: flex; flex-direction: column; gap: 0.75rem; margin-bottom: 1.25rem;">
+            <div>
+              <label style="font-size: 0.8rem; font-weight: 700; display: block; margin-bottom: 0.25rem;">Seu E-mail Principal:</label>
+              <input type="email" id="lead-email" placeholder="seuemail@exemplo.com" style="width: 100%; min-height: 3rem; padding: 0.75rem; border: 1.5px solid var(--color-border); border-radius: var(--radius-md); font-size: 1rem;" />
+            </div>
+            <div>
+              <label style="font-size: 0.8rem; font-weight: 700; display: block; margin-bottom: 0.25rem;">WhatsApp / Telemóvel (com DDD):</label>
+              <input type="tel" id="lead-phone" placeholder="(XX) 99999-9999" style="width: 100%; min-height: 3rem; padding: 0.75rem; border: 1.5px solid var(--color-border); border-radius: var(--radius-md); font-size: 1rem;" />
+            </div>
+          </div>
+
+          <button class="btn-cta" onclick="submitLeadAndGoResult()">
+            ACESSAR MEU PROTOCOLO COMPLETO →
+          </button>
+        </div>
+      `;
+    }
+
+    function submitLeadAndGoResult() {
+      const email = document.getElementById('lead-email')?.value.trim();
+      if (!email || !email.includes('@')) {
+        alert('Por favor, informe um e-mail válido para liberar seu acesso.');
+        return;
+      }
+      state.step = 'result';
+      render();
+    }
+
+    /* 8. RESULT & CONVERSION SCREEN */
+    function renderResult() {
+      container.innerHTML = `
+        <div class="fade-in">
+          <!-- Urgency Countdown -->
+          <div class="timer-alert">
+            <span>⚡ Sua vaga e bônus expiram em:</span>
+            <span class="timer-clock" id="timer-display">14:45</span>
+          </div>
+
+          <span style="background: var(--color-emerald-light); color: var(--color-emerald-deep); padding: 0.35rem 0.75rem; border-radius: 9999px; font-size: 0.75rem; font-weight: 800; text-transform: uppercase;">
+            Plano Personalizado @zuy_silva emagrecer
+          </span>
+
+          <h1 style="margin: 0.75rem 0 0.5rem;">
+            Protocolo Desinchar em 7 Dias: Elimine a Fermentação Abdominal
+          </h1>
+
+          <p style="margin-bottom: 1.25rem;">
+            ${state.leadName ? `<strong>${state.leadName}</strong>, mapeamos` : 'Mapeamos'} que sua barriga estufa principalmente por acúmulo de gases fermentativos. Com ajustes estratégicos de hidratação e substituição de 3 gatilhos, o alívio na calça ocorre nas primeiras 48h a 72h.
+          </p>
+
+          <!-- What's included box -->
+          <div style="background: #F0FDF4; border: 1.5px solid #86EFAC; border-radius: var(--radius-lg); padding: 1.25rem; margin-bottom: 1.5rem;">
+            <h3 style="color: var(--color-emerald-deep); margin-bottom: 0.5rem;">O Que Você Recebe Imediatamente:</h3>
+            <ul style="list-style: none; font-size: 0.9rem; line-height: 1.7; color: #166534;">
+              <li>✔️ <strong>Cronograma Diário de 7 Dias:</strong> Bebidas e refeições anti-inchaço.</li>
+              <li>✔️ <strong>Guia de Trocas Inteligentes:</strong> Substitua sem passar fome.</li>
+              <li>✔️ <strong>Bônus da Roleta:</strong> ${state.wonBonus} (R$ 0,00).</li>
+              <li>✔️ <strong>Garantia Blindada de 30 Dias:</strong> Risco zero.</li>
+            </ul>
+          </div>
+
+          <!-- Checkout CTA Button -->
+          <a href="${HOTMART_CHECKOUT_URL}" target="_blank" rel="noopener noreferrer" class="btn-cta" style="margin-bottom: 1rem;">
+            QUERO DESINCHAR MINHA BARRIGA AGORA →
+          </a>
+
+          <div style="text-align: center; font-size: 0.75rem; color: var(--color-text-muted); margin-bottom: 1.5rem;">
+            🔒 Pagamento 100% Seguro pela Hotmart · Acesso Imediato
+          </div>
+
+          <!-- Testimonials Section -->
+          <h3 style="margin-top: 1.5rem; margin-bottom: 0.75rem;">Depoimentos Reais de Quem Já Fez:</h3>
+          <div class="testimonial-card">
+            <div style="color: #EAB308; font-size: 1rem;">⭐⭐⭐⭐⭐</div>
+            <p style="font-style: italic; color: var(--color-text-main); font-size: 0.9rem;">
+              "Respondi ao teste e comecei o cronograma no mesmo dia. Em 4 dias minhas calças jeans voltaram a fechar sem apertar a cintura. Nunca imaginei que o segredo era a fermentação!"
+            </p>
+            <div style="font-weight: 700; font-size: 0.8rem; color: var(--color-emerald-deep);">
+              — Mariana F. (38 anos) · Perdeu 3,2 kg de inchaço
+            </div>
+          </div>
+
+          <!-- FAQ Accordion -->
+          <h3 style="margin-top: 1.5rem; margin-bottom: 0.75rem;">Perguntas Frequentes:</h3>
+          <div class="faq-item" onclick="this.classList.toggle('open')">
+            <button class="faq-question">
+              <span>Funciona para qualquer idade?</span>
+              <span>+</span>
+            </button>
+            <div class="faq-answer">
+              Sim! O protocolo foi desenvolvido especialmente para mulheres a partir dos 35 anos, quando alterações hormonais desaceleram a digestão. Funciona com segurança e eficácia comprovada.
+            </div>
+          </div>
+          <div class="faq-item" onclick="this.classList.toggle('open')">
+            <button class="faq-question">
+              <span>Por quanto tempo tenho acesso?</span>
+              <span>+</span>
+            </button>
+            <div class="faq-answer">
+              Você tem acesso vitalício a todo o material, podendo consultar e repetir o cronograma sempre que desejar.
+            </div>
+          </div>
+          <div class="faq-item" onclick="this.classList.toggle('open')">
+            <button class="faq-question">
+              <span>E se eu não gostar ou não funcionar?</span>
+              <span>+</span>
+            </button>
+            <div class="faq-answer">
+              Você possui 30 dias de garantia blindada. Se não sentir seu abdômen desinchar, basta um clique e 100% do seu dinheiro é devolvido. Sem perguntas.
+            </div>
+          </div>
+
+          <!-- Bottom Restart Action -->
+          <div style="margin-top: 2rem; text-align: center;">
+            <button class="btn-secondary" onclick="location.reload()">
+              🔄 Refazer a Avaliação
+            </button>
+          </div>
+        </div>
+      `;
+
+      startCountdown(14 * 60 + 45);
+    }
+
+    function startCountdown(duration) {
+      let timer = duration;
+      const interval = setInterval(() => {
+        const minutes = parseInt(timer / 60, 10);
+        const seconds = parseInt(timer % 60, 10);
+        const display = document.getElementById('timer-display');
+        if (display) {
+          display.textContent = `${minutes < 10 ? '0' : ''}${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+        }
+        if (--timer < 0) {
+          clearInterval(interval);
+        }
+      }, 1000);
+    }
+
+    // Inicialização da aplicação
+    render();
+  </script>
 </body>
 </html>
